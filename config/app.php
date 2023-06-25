@@ -17,6 +17,7 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    "cache_minutes" => env("DB_CACHE_TIME_MINUTES", 10),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -41,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
