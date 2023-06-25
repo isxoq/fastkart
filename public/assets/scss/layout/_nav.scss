@@ -418,6 +418,7 @@ header {
 
      .navbar.navbar-expand-xl {
           .navbar-nav {
+               
                .nav-item {
                     +.nav-item {
                          margin-left: calc(30px + (40 - 30) * ((100vw - 1200px) / (1920 - 1200)));
@@ -498,7 +499,7 @@ header {
                     }
 
                     &::before {
-                         @include pos($pos: absolute, $content: "\f107");
+                         // @include pos($pos: absolute, $content: "\f107");
                          @include font;
                          right: -12px;
 
@@ -522,6 +523,10 @@ header {
                               content: none;
                          }
                     }
+               }
+
+               .nav-hand{
+                    cursor:pointer
                }
           }
      }

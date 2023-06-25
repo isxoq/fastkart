@@ -1,54 +1,55 @@
-
+<br>
 <!-- Footer Section Start -->
 <footer class="section-t-space">
     <div class="container-fluid-lg">
-        <div class="service-section">
-            <div class="row g-3">
-                <div class="col-12">
-                    <div class="service-contain">
-                        <div class="service-box">
-                            <div class="service-image">
-                                <img src="../assets/svg/product.svg" class="blur-up lazyload" alt="">
-                            </div>
+{{--        <div class="service-section">--}}
+{{--            <div class="row g-3">--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="service-contain">--}}
+{{--                        <div class="service-box">--}}
+{{--                            <div class="service-image">--}}
+{{--                                <img src="../assets/svg/product.svg" class="blur-up lazyload" alt="">--}}
+{{--                            </div>--}}
 
-                            <div class="service-detail">
-                                <h5>Every Fresh Products</h5>
-                            </div>
-                        </div>
+{{--                            <div class="service-detail">--}}
+{{--                                <h5>Every Fresh Products</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="service-box">
-                            <div class="service-image">
-                                <img src="../assets/svg/delivery.svg" class="blur-up lazyload" alt="">
-                            </div>
+{{--                        <div class="service-box">--}}
+{{--                            <div class="service-image">--}}
+{{--                                <img src="../assets/svg/delivery.svg" class="blur-up lazyload" alt="">--}}
+{{--                            </div>--}}
 
-                            <div class="service-detail">
-                                <h5>Free Delivery For Order Over $50</h5>
-                            </div>
-                        </div>
+{{--                            <div class="service-detail">--}}
+{{--                                <h5>Free Delivery For Order Over $50</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="service-box">
-                            <div class="service-image">
-                                <img src="../assets/svg/discount.svg" class="blur-up lazyload" alt="">
-                            </div>
+{{--                        <div class="service-box">--}}
+{{--                            <div class="service-image">--}}
+{{--                                <img src="../assets/svg/discount.svg" class="blur-up lazyload" alt="">--}}
+{{--                            </div>--}}
 
-                            <div class="service-detail">
-                                <h5>Daily Mega Discounts</h5>
-                            </div>
-                        </div>
+{{--                            <div class="service-detail">--}}
+{{--                                <h5>Daily Mega Discounts</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="service-box">
-                            <div class="service-image">
-                                <img src="../assets/svg/market.svg" class="blur-up lazyload" alt="">
-                            </div>
+{{--                        <div class="service-box">--}}
+{{--                            <div class="service-image">--}}
+{{--                                <img src="../assets/svg/market.svg" class="blur-up lazyload" alt="">--}}
+{{--                            </div>--}}
 
-                            <div class="service-detail">
-                                <h5>Best Price On The Market</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--                            <div class="service-detail">--}}
+{{--                                <h5>Best Price On The Market</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
 
         <div class="main-footer section-b-space section-t-space">
             <div class="row g-md-4 g-3">
@@ -456,26 +457,6 @@
     </div>
 </div>
 <!-- Location Modal End -->
-
-<!-- Cookie Bar Box Start -->
-<div class="cookie-bar-box">
-    <div class="cookie-box">
-        <div class="cookie-image">
-            <img src="../assets/images/cookie-bar.png" class="blur-up lazyload" alt="">
-            <h2>Cookies!</h2>
-        </div>
-
-        <div class="cookie-contain">
-            <h5 class="text-content">We use cookies to make your experience better</h5>
-        </div>
-    </div>
-
-    <div class="button-group">
-        <button class="btn privacy-button">Privacy Policy</button>
-        <button class="btn ok-button">OK</button>
-    </div>
-</div>
-<!-- Cookie Bar Box End -->
 
 <!-- Deal Box Modal Start -->
 <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
