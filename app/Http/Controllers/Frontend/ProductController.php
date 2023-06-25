@@ -138,10 +138,4 @@ class ProductController extends Controller
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }
-
-    public function detail(\Illuminate\Support\Facades\Request $request)
-    {
-        return view("frontend.detail");
-
-    }
 }

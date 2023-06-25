@@ -26,7 +26,7 @@ class UpdateBlogRequest extends FormRequest
                 'nullable',
             ],
             'end' => [
-                'string',
+                'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
                 'nullable',
             ],
             'meta_title' => [

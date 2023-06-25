@@ -24,6 +24,7 @@ class Blog extends Model implements HasMedia
 
     protected $dates = [
         'start',
+        'end',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -85,5 +86,15 @@ class Blog extends Model implements HasMedia
     public function setStartAttribute($value)
     {
         $this->attributes['start'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+    }
+
+    public function getEndAttribute($value)
+    {
+        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format')) : null;
+    }
+
+    public function setEndAttribute($value)
+    {
+        $this->attributes['end'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

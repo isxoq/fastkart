@@ -28,8 +28,8 @@ class Category extends Model implements HasMedia
 
     protected $fillable = [
         'name',
+        'category_id',
         'status',
-        'parent_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -46,14 +46,9 @@ class Category extends Model implements HasMedia
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
-    public function parentCategories()
+    public function categoryCategories()
     {
-        return $this->hasMany(self::class, 'parent_id', 'id');
-    }
-
-    public function categoryProducts()
-    {
-        return $this->hasMany(Product::class, 'category_id', 'id');
+        return $this->hasMany(self::class, 'category_id', 'id');
     }
 
     public function getIconAttribute()
@@ -68,8 +63,8 @@ class Category extends Model implements HasMedia
         return $file;
     }
 
-    public function parent()
+    public function category()
     {
-        return $this->belongsTo(self::class, 'parent_id');
+        return $this->belongsTo(self::class, 'category_id');
     }
 }

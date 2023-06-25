@@ -32,10 +32,7 @@
                             {{ trans('cruds.category.fields.icon') }}
                         </th>
                         <th>
-                            {{ trans('cruds.category.fields.status') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.category.fields.parent') }}
+                            {{ trans('cruds.category.fields.category') }}
                         </th>
                         <th>
                             {{ trans('cruds.category.fields.status') }}
@@ -65,15 +62,11 @@
                                 @endif
                             </td>
                             <td>
+                                {{ $category->category->name ?? '' }}
+                            </td>
+                            <td>
                                 <span style="display:none">{{ $category->status ?? '' }}</span>
                                 <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
-                            </td>
-                            <td>
-                                {{ $category->parent->name ?? '' }}
-                            </td>
-                            <td>
-                                <span style="display:none">{{ $category->parent->status ?? '' }}</span>
-                                <input type="checkbox" disabled="disabled" {{ $category->parent->status ? 'checked' : '' }}>
                             </td>
                             <td>
                                 @can('category_show')

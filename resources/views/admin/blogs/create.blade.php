@@ -53,7 +53,7 @@
             </div>
             <div class="form-group">
                 <label for="end">{{ trans('cruds.blog.fields.end') }}</label>
-                <input class="form-control {{ $errors->has('end') ? 'is-invalid' : '' }}" type="text" name="end" id="end" value="{{ old('end', '') }}">
+                <input class="form-control datetime {{ $errors->has('end') ? 'is-invalid' : '' }}" type="text" name="end" id="end" value="{{ old('end') }}">
                 @if($errors->has('end'))
                     <span class="text-danger">{{ $errors->first('end') }}</span>
                 @endif

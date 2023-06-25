@@ -83,7 +83,7 @@ class CategoryController extends Controller
     {
         abort_if(Gate::denies('category_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $category->load('parent', 'parentCategories');
+        $category->load('parent', 'categoryProducts');
 
         return view('frontend.categories.show', compact('category'));
     }

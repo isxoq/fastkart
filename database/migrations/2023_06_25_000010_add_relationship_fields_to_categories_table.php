@@ -9,8 +9,8 @@ class AddRelationshipFieldsToCategoriesTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->unsignedBigInteger('parent_id')->nullable();
-            $table->foreign('parent_id', 'parent_fk_8669456')->references('id')->on('categories');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id', 'category_fk_8670041')->references('id')->on('categories');
         });
     }
 }

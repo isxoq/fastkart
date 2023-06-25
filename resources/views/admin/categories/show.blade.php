@@ -45,18 +45,18 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.status') }}
+                            {{ trans('cruds.category.fields.category') }}
                         </th>
                         <td>
-                            <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
+                            {{ $category->category->name ?? '' }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.parent') }}
+                            {{ trans('cruds.category.fields.status') }}
                         </th>
                         <td>
-                            {{ $category->parent->name ?? '' }}
+                            <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
                         </td>
                     </tr>
                 </tbody>
@@ -76,22 +76,14 @@
     </div>
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="#parent_categories" role="tab" data-toggle="tab">
+            <a class="nav-link" href="#category_categories" role="tab" data-toggle="tab">
                 {{ trans('cruds.category.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#category_products" role="tab" data-toggle="tab">
-                {{ trans('cruds.product.title') }}
             </a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="parent_categories">
-            @includeIf('admin.categories.relationships.parentCategories', ['categories' => $category->parentCategories])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="category_products">
-            @includeIf('admin.categories.relationships.categoryProducts', ['products' => $category->categoryProducts])
+        <div class="tab-pane" role="tabpanel" id="category_categories">
+            @includeIf('admin.categories.relationships.categoryCategories', ['categories' => $category->categoryCategories])
         </div>
     </div>
 </div>

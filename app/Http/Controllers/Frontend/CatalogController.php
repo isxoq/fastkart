@@ -13,4 +13,13 @@ class CatalogController extends Controller
         return view("frontend.category");
     }
 
+
+    public function detail(\Illuminate\Support\Facades\Request $request)
+    {
+        return view("frontend.detail");
+
+    }
+
+
+
 }

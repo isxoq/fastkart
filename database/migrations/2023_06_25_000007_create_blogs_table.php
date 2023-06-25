@@ -13,7 +13,7 @@ class CreateBlogsTable extends Migration
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->datetime('start')->nullable();
-            $table->string('end')->nullable();
+            $table->datetime('end')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_tags')->nullable();
