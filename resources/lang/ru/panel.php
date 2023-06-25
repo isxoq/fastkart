@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'site_title' => 'Shoxruh aka Fastkart',
+    'site_title' => 'HARIR',
 
 ];
