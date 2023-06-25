@@ -118,9 +118,7 @@
                             <li>
                                 <a href="index.html" class="text-content">Home</a>
                             </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Shop</a>
-                            </li>
+
                             <li>
                                 <a href="about-us.html" class="text-content">About Us</a>
                             </li>
@@ -135,32 +133,32 @@
                 </div>
 
                 <div class="col-xl-2 col-sm-3">
-                    <div class="footer-title">
-                        <h4>Help Center</h4>
-                    </div>
+{{--                    <div class="footer-title">--}}
+{{--                        <h4>Help Center</h4>--}}
+{{--                    </div>--}}
 
-                    <div class="footer-contain">
-                        <ul>
-                            <li>
-                                <a href="order-success.html" class="text-content">Your Order</a>
-                            </li>
-                            <li>
-                                <a href="user-dashboard.html" class="text-content">Your Account</a>
-                            </li>
-                            <li>
-                                <a href="order-tracking.html" class="text-content">Track Order</a>
-                            </li>
-                            <li>
-                                <a href="wishlist.html" class="text-content">Your Wishlist</a>
-                            </li>
-                            <li>
-                                <a href="search.html" class="text-content">Search</a>
-                            </li>
-                            <li>
-                                <a href="faq.html" class="text-content">FAQ</a>
-                            </li>
-                        </ul>
-                    </div>
+{{--                    <div class="footer-contain">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                <a href="order-success.html" class="text-content">Your Order</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="user-dashboard.html" class="text-content">Your Account</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="order-tracking.html" class="text-content">Track Order</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="wishlist.html" class="text-content">Your Wishlist</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="search.html" class="text-content">Search</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="faq.html" class="text-content">FAQ</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </div>
 
                 <div class="col-xl-3 col-lg-4 col-sm-6">
@@ -190,23 +188,23 @@
                                 </div>
                             </li>
 
-                            <li class="social-app mb-0">
-                                <h5 class="mb-2 text-content">Download App :</h5>
-                                <ul>
-                                    <li class="mb-0">
-                                        <a href="https://play.google.com/store/apps" target="_blank">
-                                            <img src="../assets/images/playstore.svg" class="blur-up lazyload"
-                                                 alt="">
-                                        </a>
-                                    </li>
-                                    <li class="mb-0">
-                                        <a href="https://www.apple.com/in/app-store/" target="_blank">
-                                            <img src="../assets/images/appstore.svg" class="blur-up lazyload"
-                                                 alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+{{--                            <li class="social-app mb-0">--}}
+{{--                                <h5 class="mb-2 text-content">Download App :</h5>--}}
+{{--                                <ul>--}}
+{{--                                    <li class="mb-0">--}}
+{{--                                        <a href="https://play.google.com/store/apps" target="_blank">--}}
+{{--                                            <img src="../assets/images/playstore.svg" class="blur-up lazyload"--}}
+{{--                                                 alt="">--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="mb-0">--}}
+{{--                                        <a href="https://www.apple.com/in/app-store/" target="_blank">--}}
+{{--                                            <img src="../assets/images/appstore.svg" class="blur-up lazyload"--}}
+{{--                                                 alt="">--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                 </div>
@@ -218,9 +216,9 @@
                 <h6 class="text-content">©2022 Fastkart All rights reserved</h6>
             </div>
 
-            <div class="payment">
-                <img src="../assets/images/payment/1.png" class="blur-up lazyload" alt="">
-            </div>
+{{--            <div class="payment">--}}
+{{--                <img src="../assets/images/payment/1.png" class="blur-up lazyload" alt="">--}}
+{{--            </div>--}}
 
             <div class="social-link">
                 <h6 class="text-content">Stay connected :</h6>

@@ -2,8 +2,14 @@
 
 
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\CatalogController;
+use App\Http\Controllers\Frontend\ProductController;
 
-Route::get('/', [HomeController::class,"index"])->name('home');
+Route::get('/', [HomeController::class, "index"])->name('home');
+Route::get('/category/{category}', [CatalogController::class, "category"])->name('category');
+Route::get('/product/{category}', [ProductController::class, "detail"])->name('product_detail');
+
+
 Auth::routes(['register' => false]);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
