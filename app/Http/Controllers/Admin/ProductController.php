@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
@@ -24,7 +24,7 @@ class ProductController extends Controller
 
         $products = Product::with(['category', 'media'])->get();
 
-        return view('frontend.products.index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     public function create()
@@ -33,7 +33,7 @@ class ProductController extends Controller
 
         $categories = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('frontend.products.create', compact('categories'));
+        return view('admin.products.create', compact('categories'));
     }
 
     public function store(StoreProductRequest $request)
@@ -52,7 +52,7 @@ class ProductController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $product->id]);
         }
 
-        return redirect()->route('frontend.products.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function edit(Product $product)
@@ -63,7 +63,7 @@ class ProductController extends Controller
 
         $product->load('category');
 
-        return view('frontend.products.edit', compact('categories', 'product'));
+        return view('admin.products.edit', compact('categories', 'product'));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
@@ -95,7 +95,7 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('frontend.products.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function show(Product $product)
@@ -104,7 +104,7 @@ class ProductController extends Controller
 
         $product->load('category');
 
-        return view('frontend.products.show', compact('product'));
+        return view('admin.products.show', compact('product'));
     }
 
     public function destroy(Product $product)
