@@ -1,10 +1,12 @@
 <?php
 
-Route::view('/', 'welcome');
+
+use App\Http\Controllers\Frontend\HomeController;
+
+Route::get('/', [HomeController::class,"index"])->name('home');
 Auth::routes(['register' => false]);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('/', 'HomeController@index')->name('home');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
     Route::resource('permissions', 'PermissionsController');
