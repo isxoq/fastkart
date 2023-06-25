@@ -6562,20 +6562,6 @@ header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .deliver
   margin-right: unset;
   margin-left: 14px;
 }
-@media (max-width: 1660px) {
-  header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .delivery-login-box .delivery-icon .feather {
-    margin-right: 0;
-  }
-  [dir=rtl] header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .delivery-login-box .delivery-icon .feather {
-    margin-right: unset;
-    margin-left: 0;
-  }
-}
-@media (max-width: 1660px) {
-  header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .delivery-login-box .delivery-detail {
-    display: none;
-  }
-}
 header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .delivery-login-box .delivery-detail h6 {
   color: #4a5568;
   margin-bottom: 3px;

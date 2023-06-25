@@ -754,8 +754,8 @@ header {
                                         margin-left: 14px;
                                     }
 
-                                    @include mq-max(4xl) {
-                                        margin-right: 0;
+                                    @include mq-max(1xl) {
+                                        margin-right: 11px;
 
                                         [dir="rtl"] & {
                                             margin-right: unset;
@@ -766,7 +766,7 @@ header {
                             }
 
                             .delivery-detail {
-                                @include mq-max(4xl) {
+                                @include mq-max(1xl) {
                                     display: none;
                                 }
 
