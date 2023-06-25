@@ -71,6 +71,42 @@
                         </ul>
                     </li>
                 @endcan
+                @can('category_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.categories.index") }}" class="nav-link {{ request()->is("admin/categories") || request()->is("admin/categories/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-cart-plus">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.category.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('product_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.products.index") }}" class="nav-link {{ request()->is("admin/products") || request()->is("admin/products/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-cogs">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.product.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('blog_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.blogs.index") }}" class="nav-link {{ request()->is("admin/blogs") || request()->is("admin/blogs/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-bars">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.blog.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
                     @can('profile_password_edit')
                         <li class="nav-item">
