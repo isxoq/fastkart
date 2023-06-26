@@ -21,7 +21,7 @@ class CategoryController extends Controller
     {
         abort_if(Gate::denies('category_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $categories = Category::with(['parent', 'media'])->get();
+        $categories = Category::with(['category', 'media'])->get();
 
         return view('frontend.categories.index', compact('categories'));
     }
@@ -30,9 +30,9 @@ class CategoryController extends Controller
     {
         abort_if(Gate::denies('category_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $parents = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $categories = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('frontend.categories.create', compact('parents'));
+        return view('frontend.categories.create', compact('categories'));
     }
 
     public function store(StoreCategoryRequest $request)
@@ -54,11 +54,11 @@ class CategoryController extends Controller
     {
         abort_if(Gate::denies('category_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $parents = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $categories = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $category->load('parent');
+        $category->load('category');
 
-        return view('frontend.categories.edit', compact('category', 'parents'));
+        return view('frontend.categories.edit', compact('categories', 'category'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)
@@ -83,7 +83,7 @@ class CategoryController extends Controller
     {
         abort_if(Gate::denies('category_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $category->load('parent', 'categoryProducts');
+        $category->load('category', 'categoryCategories');
 
         return view('frontend.categories.show', compact('category'));
     }

@@ -4,40 +4,38 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
         ->where('status', 1)
         ->get();
 });
+
+
+$topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Classes\Helper::cacheTime(), function () {
+    return \App\Models\TopLabel::query()
+        ->orderBy('sort_order')
+        ->get();
+});
 ?>
     <!-- Header Start -->
 <header class="pb-md-4 pb-0">
     <div class="header-top">
         <div class="container-fluid-lg">
             <div class="row">
-                <div class="col-xxl-3 d-xxl-block d-none">
+                <div class="col-xxl-4 col-lg-4 d-xxl-block   col-sm-8">
                     <div class="top-left-header">
                         <i class="iconly-Location icli text-white"></i>
-                        <span class="text-white">1418 Riverwood Drive, CA 96052, US</span>
+                        <span class="text-white">Toshkent, Shayhontoxur t, Mannon Uyg’ur, 307</span>
                     </div>
                 </div>
 
-                <div class="col-xxl-6 col-lg-9 d-lg-block d-none">
+                <div class="col-xxl-6 col-lg-8 d-lg-block d-none">
                     <div class="header-offer">
                         <div class="notification-slider">
-                            <div>
-                                <div class="timer-notification">
-                                    <h6><strong class="me-1">Welcome to Fastkart!</strong>Wrap new offers/gift
-                                        every signle day on Weekends.<strong class="ms-1">New Coupon Code: Fast024
-                                        </strong>
+                            @foreach($topTitles as $title)
 
-                                    </h6>
+                                <div>
+                                    <div class="timer-notification">
+                                        {!!$title->content!!}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div>
-                                <div class="timer-notification">
-                                    <h6>Something you love is now on sale!
-                                        <a href="shop-left-sidebar.html" class="text-white">Buy Now
-                                            !</a>
-                                    </h6>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -114,8 +112,8 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i class="fa-solid fa-bars"></i>
                                 </span>
                         </button>
-                        <a href="index.html" class="web-logo nav-logo">
-                            <img src="../assets/images/logo/1.png" class="img-fluid blur-up lazyload" alt="">
+                        <a href="{{url("/")}}" class="web-logo nav-logo">
+                            <img src="{{"/images/logo2.png"}}" class="img-fluid blur-up lazyload" alt="">
                         </a>
 
                         <div class="middle-box">
@@ -132,8 +130,8 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
 
                             <div class="search-box">
                                 <div class="input-group">
-                                    <input type="search" class="form-control" placeholder="I'm searching for..."
-                                           aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <input type="search" class="form-control" placeholder="Qidiruv..."
+                                           aria-label="" aria-describedby="button-addon2">
                                     <button class="btn" type="button" id="button-addon2">
                                         <i data-feather="search"></i>
                                     </button>
@@ -147,131 +145,131 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                         <span class="input-group-text">
                                             <i data-feather="search" class="font-light"></i>
                                         </span>
-                                    <input type="text" class="form-control search-type" placeholder="Search here..">
+                                    <input type="text" class="form-control search-type" placeholder="Qidiruv..">
                                     <span class="input-group-text close-search">
                                             <i data-feather="x" class="font-light"></i>
                                         </span>
                                 </div>
                             </div>
-                                                        <ul class="right-side-menu">
-                                                            <li class="right-side">
-                                                                <div class="delivery-login-box">
-                                                                    <div class="delivery-icon">
-                                                                        <div class="search-box">
-                                                                            <i data-feather="search"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="right-side">
-                                                                <a href="contact-us.html" class="delivery-login-box">
-                                                                    <div class="delivery-icon">
-                                                                        <i data-feather="phone-call"></i>
-                                                                    </div>
-                                                                    <div class="delivery-detail">
-                                                                        <h6>24/7 Delivery</h6>
-                                                                        <h5>+91 888 104 2340</h5>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-{{--                                                            <li class="right-side">--}}
-{{--                                                                <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">--}}
-{{--                                                                    <i data-feather="heart"></i>--}}
-{{--                                                                </a>--}}
-{{--                                                            </li>--}}
-{{--                                                            <li class="right-side">--}}
-{{--                                                                <div class="onhover-dropdown header-badge">--}}
-{{--                                                                    <button type="button" class="btn p-0 position-relative header-wishlist">--}}
-{{--                                                                        <i data-feather="shopping-cart"></i>--}}
-{{--                                                                        <span class="position-absolute top-0 start-100 translate-middle badge">2--}}
-{{--                                                                                <span class="visually-hidden">unread messages</span>--}}
-{{--                                                                            </span>--}}
-{{--                                                                    </button>--}}
+                            <ul class="right-side-menu">
+                                <li class="right-side">
+                                    <div class="delivery-login-box">
+                                        <div class="delivery-icon">
+                                            <div class="search-box">
+                                                <i data-feather="search"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="right-side">
+                                    <a href="tel:+998936448111"  class="delivery-login-box">
+                                        <div class="delivery-icon">
+                                            <i data-feather="phone-call"></i>
+                                        </div>
+                                        <div class="delivery-detail">
+                                            <h6>24/7 Delivery</h6>
+                                            <h5>(93) 644 81 11</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                {{--                                                            <li class="right-side">--}}
+                                {{--                                                                <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">--}}
+                                {{--                                                                    <i data-feather="heart"></i>--}}
+                                {{--                                                                </a>--}}
+                                {{--                                                            </li>--}}
+                                {{--                                                            <li class="right-side">--}}
+                                {{--                                                                <div class="onhover-dropdown header-badge">--}}
+                                {{--                                                                    <button type="button" class="btn p-0 position-relative header-wishlist">--}}
+                                {{--                                                                        <i data-feather="shopping-cart"></i>--}}
+                                {{--                                                                        <span class="position-absolute top-0 start-100 translate-middle badge">2--}}
+                                {{--                                                                                <span class="visually-hidden">unread messages</span>--}}
+                                {{--                                                                            </span>--}}
+                                {{--                                                                    </button>--}}
 
-{{--                                                                    <div class="onhover-div">--}}
-{{--                                                                        <ul class="cart-list">--}}
-{{--                                                                            <li class="product-box-contain">--}}
-{{--                                                                                <div class="drop-cart">--}}
-{{--                                                                                    <a href="product-left-thumbnail.html" class="drop-image">--}}
-{{--                                                                                        <img src="../assets/images/vegetable/product/1.png"--}}
-{{--                                                                                             class="blur-up lazyload" alt="">--}}
-{{--                                                                                    </a>--}}
+                                {{--                                                                    <div class="onhover-div">--}}
+                                {{--                                                                        <ul class="cart-list">--}}
+                                {{--                                                                            <li class="product-box-contain">--}}
+                                {{--                                                                                <div class="drop-cart">--}}
+                                {{--                                                                                    <a href="product-left-thumbnail.html" class="drop-image">--}}
+                                {{--                                                                                        <img src="../assets/images/vegetable/product/1.png"--}}
+                                {{--                                                                                             class="blur-up lazyload" alt="">--}}
+                                {{--                                                                                    </a>--}}
 
-{{--                                                                                    <div class="drop-contain">--}}
-{{--                                                                                        <a href="product-left-thumbnail.html">--}}
-{{--                                                                                            <h5>Fantasy Crunchy Choco Chip Cookies</h5>--}}
-{{--                                                                                        </a>--}}
-{{--                                                                                        <h6><span>1 x</span> $80.58</h6>--}}
-{{--                                                                                        <button class="close-button close_button">--}}
-{{--                                                                                            <i class="fa-solid fa-xmark"></i>--}}
-{{--                                                                                        </button>--}}
-{{--                                                                                    </div>--}}
-{{--                                                                                </div>--}}
-{{--                                                                            </li>--}}
+                                {{--                                                                                    <div class="drop-contain">--}}
+                                {{--                                                                                        <a href="product-left-thumbnail.html">--}}
+                                {{--                                                                                            <h5>Fantasy Crunchy Choco Chip Cookies</h5>--}}
+                                {{--                                                                                        </a>--}}
+                                {{--                                                                                        <h6><span>1 x</span> $80.58</h6>--}}
+                                {{--                                                                                        <button class="close-button close_button">--}}
+                                {{--                                                                                            <i class="fa-solid fa-xmark"></i>--}}
+                                {{--                                                                                        </button>--}}
+                                {{--                                                                                    </div>--}}
+                                {{--                                                                                </div>--}}
+                                {{--                                                                            </li>--}}
 
-{{--                                                                            <li class="product-box-contain">--}}
-{{--                                                                                <div class="drop-cart">--}}
-{{--                                                                                    <a href="product-left-thumbnail.html" class="drop-image">--}}
-{{--                                                                                        <img src="../assets/images/vegetable/product/2.png"--}}
-{{--                                                                                             class="blur-up lazyload" alt="">--}}
-{{--                                                                                    </a>--}}
+                                {{--                                                                            <li class="product-box-contain">--}}
+                                {{--                                                                                <div class="drop-cart">--}}
+                                {{--                                                                                    <a href="product-left-thumbnail.html" class="drop-image">--}}
+                                {{--                                                                                        <img src="../assets/images/vegetable/product/2.png"--}}
+                                {{--                                                                                             class="blur-up lazyload" alt="">--}}
+                                {{--                                                                                    </a>--}}
 
-{{--                                                                                    <div class="drop-contain">--}}
-{{--                                                                                        <a href="product-left-thumbnail.html">--}}
-{{--                                                                                            <h5>Peanut Butter Bite Premium Butter Cookies 600 g--}}
-{{--                                                                                            </h5>--}}
-{{--                                                                                        </a>--}}
-{{--                                                                                        <h6><span>1 x</span> $25.68</h6>--}}
-{{--                                                                                        <button class="close-button close_button">--}}
-{{--                                                                                            <i class="fa-solid fa-xmark"></i>--}}
-{{--                                                                                        </button>--}}
-{{--                                                                                    </div>--}}
-{{--                                                                                </div>--}}
-{{--                                                                            </li>--}}
-{{--                                                                        </ul>--}}
+                                {{--                                                                                    <div class="drop-contain">--}}
+                                {{--                                                                                        <a href="product-left-thumbnail.html">--}}
+                                {{--                                                                                            <h5>Peanut Butter Bite Premium Butter Cookies 600 g--}}
+                                {{--                                                                                            </h5>--}}
+                                {{--                                                                                        </a>--}}
+                                {{--                                                                                        <h6><span>1 x</span> $25.68</h6>--}}
+                                {{--                                                                                        <button class="close-button close_button">--}}
+                                {{--                                                                                            <i class="fa-solid fa-xmark"></i>--}}
+                                {{--                                                                                        </button>--}}
+                                {{--                                                                                    </div>--}}
+                                {{--                                                                                </div>--}}
+                                {{--                                                                            </li>--}}
+                                {{--                                                                        </ul>--}}
 
-{{--                                                                        <div class="price-box">--}}
-{{--                                                                            <h5>Total :</h5>--}}
-{{--                                                                            <h4 class="theme-color fw-bold">$106.58</h4>--}}
-{{--                                                                        </div>--}}
+                                {{--                                                                        <div class="price-box">--}}
+                                {{--                                                                            <h5>Total :</h5>--}}
+                                {{--                                                                            <h4 class="theme-color fw-bold">$106.58</h4>--}}
+                                {{--                                                                        </div>--}}
 
-{{--                                                                        <div class="button-group">--}}
-{{--                                                                            <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>--}}
-{{--                                                                            <a href="checkout.html" class="btn btn-sm cart-button theme-bg-color--}}
-{{--                                                                                text-white">Checkout</a>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-{{--                                                            </li>--}}
-{{--                                                            <li class="right-side onhover-dropdown">--}}
-{{--                                                                <div class="delivery-login-box">--}}
-{{--                                                                    <div class="delivery-icon">--}}
-{{--                                                                        <i data-feather="user"></i>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="delivery-detail">--}}
-{{--                                                                        <h6>Hello,</h6>--}}
-{{--                                                                        <h5>My Account</h5>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
+                                {{--                                                                        <div class="button-group">--}}
+                                {{--                                                                            <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>--}}
+                                {{--                                                                            <a href="checkout.html" class="btn btn-sm cart-button theme-bg-color--}}
+                                {{--                                                                                text-white">Checkout</a>--}}
+                                {{--                                                                        </div>--}}
+                                {{--                                                                    </div>--}}
+                                {{--                                                                </div>--}}
+                                {{--                                                            </li>--}}
+                                {{--                                                            <li class="right-side onhover-dropdown">--}}
+                                {{--                                                                <div class="delivery-login-box">--}}
+                                {{--                                                                    <div class="delivery-icon">--}}
+                                {{--                                                                        <i data-feather="user"></i>--}}
+                                {{--                                                                    </div>--}}
+                                {{--                                                                    <div class="delivery-detail">--}}
+                                {{--                                                                        <h6>Hello,</h6>--}}
+                                {{--                                                                        <h5>My Account</h5>--}}
+                                {{--                                                                    </div>--}}
+                                {{--                                                                </div>--}}
 
-{{--                                                                <div class="onhover-div onhover-div-login">--}}
-{{--                                                                    <ul class="user-box-name">--}}
-{{--                                                                        <li class="product-box-contain">--}}
-{{--                                                                            <i></i>--}}
-{{--                                                                            <a href="login.html">Log In</a>--}}
-{{--                                                                        </li>--}}
+                                {{--                                                                <div class="onhover-div onhover-div-login">--}}
+                                {{--                                                                    <ul class="user-box-name">--}}
+                                {{--                                                                        <li class="product-box-contain">--}}
+                                {{--                                                                            <i></i>--}}
+                                {{--                                                                            <a href="login.html">Log In</a>--}}
+                                {{--                                                                        </li>--}}
 
-{{--                                                                        <li class="product-box-contain">--}}
-{{--                                                                            <a href="sign-up.html">Register</a>--}}
-{{--                                                                        </li>--}}
+                                {{--                                                                        <li class="product-box-contain">--}}
+                                {{--                                                                            <a href="sign-up.html">Register</a>--}}
+                                {{--                                                                        </li>--}}
 
-{{--                                                                        <li class="product-box-contain">--}}
-{{--                                                                            <a href="forgot.html">Forgot Password</a>--}}
-{{--                                                                        </li>--}}
-{{--                                                                    </ul>--}}
-{{--                                                                </div>--}}
-{{--                                                            </li>--}}
-                                                        </ul>
+                                {{--                                                                        <li class="product-box-contain">--}}
+                                {{--                                                                            <a href="forgot.html">Forgot Password</a>--}}
+                                {{--                                                                        </li>--}}
+                                {{--                                                                    </ul>--}}
+                                {{--                                                                </div>--}}
+                                {{--                                                            </li>--}}
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -286,7 +284,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                     <div class="header-nav-left">
                         <button class="dropdown-category">
                             <i data-feather="align-left"></i>
-                            <span>All Categories</span>
+                            <span>Barcha kategoriyalar</span>
                         </button>
 
                         <div class="category-dropdown">

@@ -48,18 +48,18 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.category.fields.status') }}
+                                        {{ trans('cruds.category.fields.category') }}
                                     </th>
                                     <td>
-                                        <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
+                                        {{ $category->category->name ?? '' }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.category.fields.parent') }}
+                                        {{ trans('cruds.category.fields.status') }}
                                     </th>
                                     <td>
-                                        {{ $category->parent->name ?? '' }}
+                                        <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
                                     </td>
                                 </tr>
                             </tbody>

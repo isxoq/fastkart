@@ -6551,7 +6551,7 @@ header .top-nav .navbar-top .rightside-box .right-side-menu .right-side::before 
 header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .delivery-login-box {
   display: flex;
   align-items: center;
-  cursor: default;
+  cursor: pointer;
 }
 header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .delivery-login-box .delivery-icon .feather {
   color: #ffffff;
