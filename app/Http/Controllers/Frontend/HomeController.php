@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Frontend;
 use App\Classes\Helper;
 use App\Models\Banner;
 use App\Models\BanneSlider;
+use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\Cache;
 
 class HomeController
@@ -38,10 +40,14 @@ class HomeController
                 ->get();
         });
 
+        $products = Product::query()->limit(24)->get()->chunk(2);
+
+        $posts = Blog::query()->limit(6)->get();
+
         return view('frontend.home', compact(
             "categories",
             "bigBanner",
             "smallBanners",
-            "bannerSlider"));
+            "bannerSlider", "products","posts"));
     }
 }

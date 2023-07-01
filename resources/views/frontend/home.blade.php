@@ -68,7 +68,7 @@
                                     <img src="{{$smallBanner->photo->url}}" class="bg-img blur-up lazyload"
                                          alt="">
                                     <div class="home-detail p-center-left home-p-sm w-75">
-                                     {!! $smallBanner->content !!}
+                                        {!! $smallBanner->content !!}
                                     </div>
                                 </div>
                             </div>
@@ -354,77 +354,23 @@
                     <div class="section-b-space">
                         <div class="product-border border-row overflow-hidden">
                             <div class="product-box-slider no-arrow">
-                                <div>
-                                    <div class="row m-0">
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
 
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
+
+                                @foreach($products as $productArray)
+
+                                    <div>
+                                        <div class="row m-0">
+                                            @foreach($productArray as $product)
+                                                <div class="col-12 px-0">
+                                                    @include("frontend.partials.home-product-box",['product'=>$product])
+                                                </div>
+                                            @endforeach
+
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
 
-                                <div>
-                                    <div class="row m-0">
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
 
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="row m-0">
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="row m-0">
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="row m-0">
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="row m-0">
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-
-                                        <div class="col-12 px-0">
-                                            @include("frontend.partials.home-product-box")
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -921,79 +867,35 @@
                     {{--                    </div>--}}
 
                     <div class="title section-t-space">
-                        <h2>Featured Blog</h2>
+                        <h2>Yangilik va aksiyalar</h2>
                         <span class="title-leaf">
                             <svg class="icon-width">
                                 <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
                             </svg>
                         </span>
-                        <p>A virtual assistant collects the products from your list</p>
+                        <p>Bu yerda aksiyalarimizdan bohabar bo'lasiz</p>
                     </div>
 
                     <div class="slider-3-blog ratio_65 no-arrow product-wrapper">
-                        <div>
-                            <div class="blog-box">
-                                <div class="blog-box-image">
-                                    <a href="blog-detail.html" class="blog-image">
-                                        <img src="../assets/images/vegetable/blog/1.jpg" class="bg-img blur-up lazyload"
-                                             alt="">
+                        @foreach($posts as $post)
+
+                            <div>
+                                <div class="blog-box">
+                                    <div class="blog-box-image">
+                                        <a href="{{url("blog/".$post->id)}}" class="blog-image">
+                                            <img src="{{$post->card_photo->url??""}}" class="bg-img blur-up lazyload"
+                                                 alt="">
+                                        </a>
+                                    </div>
+
+                                    <a href="blog-detail.html" class="blog-detail">
+                                        <h6>{{$product->created_at->format("d.m.Y")}}</h6>
+                                        <h5>Fresh Vegetable Online</h5>
                                     </a>
                                 </div>
-
-                                <a href="blog-detail.html" class="blog-detail">
-                                    <h6>20 March, 2022</h6>
-                                    <h5>Fresh Vegetable Online</h5>
-                                </a>
                             </div>
-                        </div>
+                        @endforeach
 
-                        <div>
-                            <div class="blog-box">
-                                <div class="blog-box-image">
-                                    <a href="blog-detail.html" class="blog-image">
-                                        <img src="../assets/images/vegetable/blog/2.jpg" class="bg-img blur-up lazyload"
-                                             alt="">
-                                    </a>
-                                </div>
-
-                                <a href="blog-detail.html" class="blog-detail">
-                                    <h6>10 April, 2022</h6>
-                                    <h5>Fresh Combo Fruit</h5>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="blog-box">
-                                <div class="blog-box-image">
-                                    <a href="blog-detail.html" class="blog-image">
-                                        <img src="../assets/images/vegetable/blog/3.jpg" class="bg-img blur-up lazyload"
-                                             alt="">
-                                    </a>
-                                </div>
-
-                                <a href="blog-detail.html" class="blog-detail">
-                                    <h6>10 April, 2022</h6>
-                                    <h5>Nuts to Eat for Better Health</h5>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="blog-box">
-                                <div class="blog-box-image">
-                                    <a href="blog-detail.html" class="blog-image">
-                                        <img src="../assets/images/vegetable/blog/1.jpg" class="bg-img blur-up lazyload"
-                                             alt="">
-                                    </a>
-                                </div>
-
-                                <a href="blog-detail.html" class="blog-detail">
-                                    <h6>20 March, 2022</h6>
-                                    <h5>Fresh Vegetable Online</h5>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
