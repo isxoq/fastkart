@@ -27,9 +27,10 @@ class SpecialOffer extends Model implements HasMedia
     ];
 
     protected $fillable = [
-        'content',
         'sort_order',
         'offer_id',
+        'title_1',
+        'title_2',
         'created_at',
         'updated_at',
         'deleted_at',

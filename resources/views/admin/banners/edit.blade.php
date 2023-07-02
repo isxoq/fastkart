@@ -24,14 +24,6 @@
                 <span class="help-block">{{ trans('cruds.banner.fields.type_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="content">{{ trans('cruds.banner.fields.content') }}</label>
-                <textarea class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{{ old('content', $banner->content) }}</textarea>
-                @if($errors->has('content'))
-                    <span class="text-danger">{{ $errors->first('content') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.content_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="photo">{{ trans('cruds.banner.fields.photo') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
                 </div>
@@ -39,6 +31,54 @@
                     <span class="text-danger">{{ $errors->first('photo') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.banner.fields.photo_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_1">{{ trans('cruds.banner.fields.title_1') }}</label>
+                <input class="form-control {{ $errors->has('title_1') ? 'is-invalid' : '' }}" type="text" name="title_1" id="title_1" value="{{ old('title_1', $banner->title_1) }}">
+                @if($errors->has('title_1'))
+                    <span class="text-danger">{{ $errors->first('title_1') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.banner.fields.title_1_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_2">{{ trans('cruds.banner.fields.title_2') }}</label>
+                <input class="form-control {{ $errors->has('title_2') ? 'is-invalid' : '' }}" type="text" name="title_2" id="title_2" value="{{ old('title_2', $banner->title_2) }}">
+                @if($errors->has('title_2'))
+                    <span class="text-danger">{{ $errors->first('title_2') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.banner.fields.title_2_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_3">{{ trans('cruds.banner.fields.title_3') }}</label>
+                <input class="form-control {{ $errors->has('title_3') ? 'is-invalid' : '' }}" type="text" name="title_3" id="title_3" value="{{ old('title_3', $banner->title_3) }}">
+                @if($errors->has('title_3'))
+                    <span class="text-danger">{{ $errors->first('title_3') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.banner.fields.title_3_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_4">{{ trans('cruds.banner.fields.title_4') }}</label>
+                <input class="form-control {{ $errors->has('title_4') ? 'is-invalid' : '' }}" type="text" name="title_4" id="title_4" value="{{ old('title_4', $banner->title_4) }}">
+                @if($errors->has('title_4'))
+                    <span class="text-danger">{{ $errors->first('title_4') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.banner.fields.title_4_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_5">{{ trans('cruds.banner.fields.title_5') }}</label>
+                <input class="form-control {{ $errors->has('title_5') ? 'is-invalid' : '' }}" type="text" name="title_5" id="title_5" value="{{ old('title_5', $banner->title_5) }}">
+                @if($errors->has('title_5'))
+                    <span class="text-danger">{{ $errors->first('title_5') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.banner.fields.title_5_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="url">{{ trans('cruds.banner.fields.url') }}</label>
+                <input class="form-control {{ $errors->has('url') ? 'is-invalid' : '' }}" type="text" name="url" id="url" value="{{ old('url', $banner->url) }}">
+                @if($errors->has('url'))
+                    <span class="text-danger">{{ $errors->first('url') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.banner.fields.url_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

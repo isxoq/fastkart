@@ -25,6 +25,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.blog.fields.slug') }}
+                        </th>
+                        <td>
+                            {{ $blog->slug }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.blog.fields.card_photo') }}
                         </th>
                         <td>

@@ -26,6 +26,9 @@
                             {{ trans('cruds.blog.fields.id') }}
                         </th>
                         <th>
+                            {{ trans('cruds.blog.fields.slug') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.blog.fields.card_photo') }}
                         </th>
                         <th>
@@ -62,6 +65,9 @@
                             </td>
                             <td>
                                 {{ $blog->id ?? '' }}
+                            </td>
+                            <td>
+                                {{ $blog->slug ?? '' }}
                             </td>
                             <td>
                                 @if($blog->card_photo)

@@ -37,18 +37,42 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banneSlider.fields.content') }}
-                        </th>
-                        <td>
-                            {{ $banneSlider->content }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.banneSlider.fields.sort_order') }}
                         </th>
                         <td>
                             {{ $banneSlider->sort_order }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.title_1') }}
+                        </th>
+                        <td>
+                            {{ $banneSlider->title_1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.title_2') }}
+                        </th>
+                        <td>
+                            {{ $banneSlider->title_2 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.title_3') }}
+                        </th>
+                        <td>
+                            {{ $banneSlider->title_3 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.url') }}
+                        </th>
+                        <td>
+                            {{ $banneSlider->url }}
                         </td>
                     </tr>
                 </tbody>

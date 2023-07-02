@@ -10,12 +10,12 @@
         <form method="POST" action="{{ route("admin.top-labels.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="content">{{ trans('cruds.topLabel.fields.content') }}</label>
-                <textarea class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{{ old('content') }}</textarea>
-                @if($errors->has('content'))
-                    <span class="text-danger">{{ $errors->first('content') }}</span>
+                <label for="title">{{ trans('cruds.topLabel.fields.title') }}</label>
+                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', '') }}">
+                @if($errors->has('title'))
+                    <span class="text-danger">{{ $errors->first('title') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.topLabel.fields.content_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.topLabel.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="sort_order">{{ trans('cruds.topLabel.fields.sort_order') }}</label>

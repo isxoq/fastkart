@@ -25,10 +25,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.topLabel.fields.content') }}
+                            {{ trans('cruds.topLabel.fields.title') }}
                         </th>
                         <td>
-                            {{ $topLabel->content }}
+                            {{ $topLabel->title }}
                         </td>
                     </tr>
                     <tr>

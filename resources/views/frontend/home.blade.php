@@ -1,3 +1,13 @@
+<?php
+
+
+$categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
+    ->whereDoesntHave('childrenRecursive')
+    ->get();
+
+?>
+
+
 @extends('layouts.frontend')
 
 @section('content')
@@ -50,10 +60,18 @@
                 <div class="col-xl-8 ratio_65">
                     <div class="home-contain h-100">
                         <div class="h-100">
-                            <img src="{{$bigBanner->photo->url}}" class="bg-img blur-up lazyload" alt="">
+                            <img src="{{$bigBanner->photo->url??""}}" class="bg-img blur-up lazyload" alt="">
                         </div>
                         <div class="home-detail p-center-left w-75">
-                            {!! $bigBanner->content !!}
+                            <div>
+                                <h6>{{$bigBanner->title_1}} <span>{{$bigBanner->title_2}}</span></h6>
+                                <h1 class="text-uppercase">{{$bigBanner->title_3}} <span
+                                        class="daily">{{$bigBanner->title_4}}</span></h1>
+                                <p class="w-75 d-none d-sm-block">{{$bigBanner->title_5}}</p>
+                                <button onclick="location.href = '{{$bigBanner->url}}';"
+                                        class="btn btn-animation mt-xxl-4 mt-2 home-button mend-auto">Ko'rish <i
+                                        class="fa-solid fa-right-long icon"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,15 +130,16 @@
                 <div class="col-xxl-3 col-xl-4 d-none d-xl-block">
                     <div class="p-sticky">
                         <div class="category-menu">
-                            <h3>Category</h3>
+                            <h3>Kategoriyalar</h3>
                             <ul>
-                                @foreach($categories as $category)
+                                @foreach($categoriesWithoutChildren as $category)
                                     <li class="{{$loop->last?"pb-30":""}}">
                                         <div class="category-list">
-                                            <img src="{{$category->icon?->thumbnail}}" class="blur-up lazyload"
+                                            <img src="{{$category->icon?->url??"../assets/svg/1/vegetable.svg"}}"
+                                                 class="blur-up lazyload"
                                                  alt="">
                                             <h5>
-                                                <a href="/">{{$category->name}}</a>
+                                                <a href="{{$category->url()}}">{{$category->name}}</a>
                                             </h5>
                                         </div>
                                     </li>
@@ -356,19 +375,19 @@
                             <div class="product-box-slider no-arrow">
 
 
-                                @foreach($products as $productArray)
+                                {{--                                @foreach($products as $productArray)--}}
 
-                                    <div>
-                                        <div class="row m-0">
-                                            @foreach($productArray as $product)
-                                                <div class="col-12 px-0">
-                                                    @include("frontend.partials.home-product-box",['product'=>$product])
-                                                </div>
-                                            @endforeach
+                                {{--                                    <div>--}}
+                                {{--                                        <div class="row m-0">--}}
+                                {{--                                            @foreach($productArray as $product)--}}
+                                {{--                                                <div class="col-12 px-0">--}}
+                                {{--                                                    @include("frontend.partials.home-product-box",['product'=>$product])--}}
+                                {{--                                                </div>--}}
+                                {{--                                            @endforeach--}}
 
-                                        </div>
-                                    </div>
-                                @endforeach
+                                {{--                                        </div>--}}
+                                {{--                                    </div>--}}
+                                {{--                                @endforeach--}}
 
 
                             </div>
@@ -496,55 +515,55 @@
                     </div>
 
                     <div class="product-border overflow-hidden wow fadeInUp">
-                        <div class="product-box-slider no-arrow">
-                            <div>
-                                <div class="row m-0">
-                                    <div class="col-12 px-0">
-                                        @include("frontend.partials.home-product-box")
-                                    </div>
-                                </div>
-                            </div>
+                        {{--                        <div class="product-box-slider no-arrow">--}}
+                        {{--                            <div>--}}
+                        {{--                                <div class="row m-0">--}}
+                        {{--                                    <div class="col-12 px-0">--}}
+                        {{--                                        @include("frontend.partials.home-product-box")--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
 
-                            <div>
-                                <div class="row m-0">
-                                    <div class="col-12 px-0">
-                                        @include("frontend.partials.home-product-box")
-                                    </div>
-                                </div>
-                            </div>
+                        {{--                            <div>--}}
+                        {{--                                <div class="row m-0">--}}
+                        {{--                                    <div class="col-12 px-0">--}}
+                        {{--                                        @include("frontend.partials.home-product-box")--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
 
-                            <div>
-                                <div class="row m-0">
-                                    <div class="col-12 px-0">
-                                        @include("frontend.partials.home-product-box")
-                                    </div>
-                                </div>
-                            </div>
+                        {{--                            <div>--}}
+                        {{--                                <div class="row m-0">--}}
+                        {{--                                    <div class="col-12 px-0">--}}
+                        {{--                                        @include("frontend.partials.home-product-box")--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
 
-                            <div>
-                                <div class="row m-0">
-                                    <div class="col-12 px-0">
-                                        @include("frontend.partials.home-product-box")
-                                    </div>
-                                </div>
-                            </div>
+                        {{--                            <div>--}}
+                        {{--                                <div class="row m-0">--}}
+                        {{--                                    <div class="col-12 px-0">--}}
+                        {{--                                        @include("frontend.partials.home-product-box")--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
 
-                            <div>
-                                <div class="row m-0">
-                                    <div class="col-12 px-0">
-                                        @include("frontend.partials.home-product-box")
-                                    </div>
-                                </div>
-                            </div>
+                        {{--                            <div>--}}
+                        {{--                                <div class="row m-0">--}}
+                        {{--                                    <div class="col-12 px-0">--}}
+                        {{--                                        @include("frontend.partials.home-product-box")--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
 
-                            <div>
-                                <div class="row m-0">
-                                    <div class="col-12 px-0">
-                                        @include("frontend.partials.home-product-box")
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{--                            <div>--}}
+                        {{--                                <div class="row m-0">--}}
+                        {{--                                    <div class="col-12 px-0">--}}
+                        {{--                                        @include("frontend.partials.home-product-box")--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                     </div>
 
                     {{--                    <div class="section-t-space">--}}

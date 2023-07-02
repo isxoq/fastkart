@@ -20,6 +20,30 @@ class UpdateBannerRequest extends FormRequest
             'type' => [
                 'required',
             ],
+            'title_1' => [
+                'string',
+                'nullable',
+            ],
+            'title_2' => [
+                'string',
+                'nullable',
+            ],
+            'title_3' => [
+                'string',
+                'nullable',
+            ],
+            'title_4' => [
+                'string',
+                'nullable',
+            ],
+            'title_5' => [
+                'string',
+                'nullable',
+            ],
+            'url' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

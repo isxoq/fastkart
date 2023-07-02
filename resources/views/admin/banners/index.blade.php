@@ -29,10 +29,25 @@
                             {{ trans('cruds.banner.fields.type') }}
                         </th>
                         <th>
-                            {{ trans('cruds.banner.fields.content') }}
+                            {{ trans('cruds.banner.fields.photo') }}
                         </th>
                         <th>
-                            {{ trans('cruds.banner.fields.photo') }}
+                            {{ trans('cruds.banner.fields.title_1') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_2') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_3') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_4') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_5') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banner.fields.url') }}
                         </th>
                         <th>
                             &nbsp;
@@ -52,14 +67,29 @@
                                 {{ App\Models\Banner::TYPE_SELECT[$banner->type] ?? '' }}
                             </td>
                             <td>
-                                {{ $banner->content ?? '' }}
-                            </td>
-                            <td>
                                 @if($banner->photo)
                                     <a href="{{ $banner->photo->getUrl() }}" target="_blank" style="display: inline-block">
                                         <img src="{{ $banner->photo->getUrl('thumb') }}">
                                     </a>
                                 @endif
+                            </td>
+                            <td>
+                                {{ $banner->title_1 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banner->title_2 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banner->title_3 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banner->title_4 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banner->title_5 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banner->url ?? '' }}
                             </td>
                             <td>
                                 @can('banner_show')

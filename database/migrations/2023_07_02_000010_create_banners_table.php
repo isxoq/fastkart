@@ -11,7 +11,12 @@ class CreateBannersTable extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
-            $table->longText('content')->nullable();
+            $table->string('title_1')->nullable();
+            $table->string('title_2')->nullable();
+            $table->string('title_3')->nullable();
+            $table->string('title_4')->nullable();
+            $table->string('title_5')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

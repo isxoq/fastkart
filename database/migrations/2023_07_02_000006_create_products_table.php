@@ -10,13 +10,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('slug')->nullable();
             $table->string('name')->nullable();
             $table->decimal('price', 15, 2)->nullable();
             $table->longText('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->boolean('is_sale')->default(0)->nullable();
             $table->decimal('sale_price', 15, 2)->nullable();
-            $table->float('sale', 15, 2)->nullable();
             $table->datetime('sale_start')->nullable();
             $table->datetime('end_sale')->nullable();
             $table->boolean('status')->default(0)->nullable();

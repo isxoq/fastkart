@@ -11,6 +11,14 @@
             @method('PUT')
             @csrf
             <div class="form-group">
+                <label for="slug">{{ trans('cruds.product.fields.slug') }}</label>
+                <input class="form-control {{ $errors->has('slug') ? 'is-invalid' : '' }}" type="text" name="slug" id="slug" value="{{ old('slug', $product->slug) }}">
+                @if($errors->has('slug'))
+                    <span class="text-danger">{{ $errors->first('slug') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.product.fields.slug_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="category_id">{{ trans('cruds.product.fields.category') }}</label>
                 <select class="form-control select2 {{ $errors->has('category') ? 'is-invalid' : '' }}" name="category_id" id="category_id">
                     @foreach($categories as $id => $entry)
@@ -90,14 +98,6 @@
                     <span class="text-danger">{{ $errors->first('sale_price') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.product.fields.sale_price_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label for="sale">{{ trans('cruds.product.fields.sale') }}</label>
-                <input class="form-control {{ $errors->has('sale') ? 'is-invalid' : '' }}" type="number" name="sale" id="sale" value="{{ old('sale', $product->sale) }}" step="0.01">
-                @if($errors->has('sale'))
-                    <span class="text-danger">{{ $errors->first('sale') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.product.fields.sale_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="sale_start">{{ trans('cruds.product.fields.sale_start') }}</label>

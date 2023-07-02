@@ -17,15 +17,16 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         return [
+            'slug' => [
+                'string',
+                'nullable',
+            ],
             'name' => [
                 'string',
                 'nullable',
             ],
             'photos' => [
                 'array',
-            ],
-            'sale' => [
-                'numeric',
             ],
             'sale_start' => [
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),

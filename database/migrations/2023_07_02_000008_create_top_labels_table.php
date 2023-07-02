@@ -10,7 +10,7 @@ class CreateTopLabelsTable extends Migration
     {
         Schema::create('top_labels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('content')->nullable();
+            $table->string('title')->nullable();
             $table->integer('sort_order')->nullable();
             $table->timestamps();
             $table->softDeletes();

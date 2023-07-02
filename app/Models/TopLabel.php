@@ -20,7 +20,7 @@ class TopLabel extends Model
     ];
 
     protected $fillable = [
-        'content',
+        'title',
         'sort_order',
         'created_at',
         'updated_at',

@@ -41,10 +41,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('blogs/media', 'BlogController@storeMedia')->name('blogs.storeMedia');
     Route::post('blogs/ckmedia', 'BlogController@storeCKEditorImages')->name('blogs.storeCKEditorImages');
     Route::resource('blogs', 'BlogController');
+
     // Top Label
     Route::delete('top-labels/destroy', 'TopLabelController@massDestroy')->name('top-labels.massDestroy');
-    Route::post('top-labels/media', 'TopLabelController@storeMedia')->name('top-labels.storeMedia');
-    Route::post('top-labels/ckmedia', 'TopLabelController@storeCKEditorImages')->name('top-labels.storeCKEditorImages');
     Route::resource('top-labels', 'TopLabelController');
 
     // Deals
@@ -72,6 +71,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('special-offers/media', 'SpecialOfferController@storeMedia')->name('special-offers.storeMedia');
     Route::post('special-offers/ckmedia', 'SpecialOfferController@storeCKEditorImages')->name('special-offers.storeCKEditorImages');
     Route::resource('special-offers', 'SpecialOfferController');
+
+    // Contact
+    Route::delete('contacts/destroy', 'ContactController@massDestroy')->name('contacts.massDestroy');
+    Route::post('contacts/media', 'ContactController@storeMedia')->name('contacts.storeMedia');
+    Route::post('contacts/ckmedia', 'ContactController@storeCKEditorImages')->name('contacts.storeCKEditorImages');
+    Route::resource('contacts', 'ContactController');
+
+    // Static Page
+    Route::delete('static-pages/destroy', 'StaticPageController@massDestroy')->name('static-pages.massDestroy');
+    Route::post('static-pages/media', 'StaticPageController@storeMedia')->name('static-pages.storeMedia');
+    Route::post('static-pages/ckmedia', 'StaticPageController@storeCKEditorImages')->name('static-pages.storeCKEditorImages');
+    Route::resource('static-pages', 'StaticPageController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
@@ -115,16 +126,8 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::post('blogs/ckmedia', 'BlogController@storeCKEditorImages')->name('blogs.storeCKEditorImages');
     Route::resource('blogs', 'BlogController');
 
-    Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
-    Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');
-    Route::post('frontend/profile/destroy', 'ProfileController@destroy')->name('profile.destroy');
-    Route::post('frontend/profile/password', 'ProfileController@password')->name('profile.password');
-
-
     // Top Label
     Route::delete('top-labels/destroy', 'TopLabelController@massDestroy')->name('top-labels.massDestroy');
-    Route::post('top-labels/media', 'TopLabelController@storeMedia')->name('top-labels.storeMedia');
-    Route::post('top-labels/ckmedia', 'TopLabelController@storeCKEditorImages')->name('top-labels.storeCKEditorImages');
     Route::resource('top-labels', 'TopLabelController');
 
     // Deals
@@ -152,6 +155,18 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::post('special-offers/media', 'SpecialOfferController@storeMedia')->name('special-offers.storeMedia');
     Route::post('special-offers/ckmedia', 'SpecialOfferController@storeCKEditorImages')->name('special-offers.storeCKEditorImages');
     Route::resource('special-offers', 'SpecialOfferController');
+
+    // Contact
+    Route::delete('contacts/destroy', 'ContactController@massDestroy')->name('contacts.massDestroy');
+    Route::post('contacts/media', 'ContactController@storeMedia')->name('contacts.storeMedia');
+    Route::post('contacts/ckmedia', 'ContactController@storeCKEditorImages')->name('contacts.storeCKEditorImages');
+    Route::resource('contacts', 'ContactController');
+
+    // Static Page
+    Route::delete('static-pages/destroy', 'StaticPageController@massDestroy')->name('static-pages.massDestroy');
+    Route::post('static-pages/media', 'StaticPageController@storeMedia')->name('static-pages.storeMedia');
+    Route::post('static-pages/ckmedia', 'StaticPageController@storeCKEditorImages')->name('static-pages.storeCKEditorImages');
+    Route::resource('static-pages', 'StaticPageController');
 
     Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
     Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');

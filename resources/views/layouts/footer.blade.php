@@ -1,3 +1,12 @@
+<?php
+
+
+$categoriesWithoutChildren  = \App\Models\Category::with('childrenRecursive')
+    ->whereDoesntHave('childrenRecursive')
+    ->get();
+
+?>
+
 <br>
 <!-- Footer Section Start -->
 <footer class="section-t-space">
@@ -57,22 +66,24 @@
                     <div class="footer-logo">
                         <div class="theme-logo">
                             <a href="index.html">
-                                <img src="../assets/images/logo/1.png" class="blur-up lazyload" alt="">
+                                <img src="../assets/images/logo/logo.svg" class="blur-up lazyload" alt="">
                             </a>
                         </div>
 
                         <div class="footer-logo-contain">
-                            <p>We are a friendly bar serving a variety of cocktails, wines and beers. Our bar is a
-                                perfect place for a couple.</p>
+                            <p>Harir - Turkiyadan keltirilgan nafis va sifatli matolar jamlanmasi. <br>
+                                - pardalar va aksessuarlar <br>
+                                - dizayner xizmati <br>
+                                - yetkazish va o'rnatish xizmati</p>
 
                             <ul class="address">
                                 <li>
                                     <i data-feather="home"></i>
-                                    <a href="javascript:void(0)">1418 Riverwood Drive, CA 96052, US</a>
+                                    <a href="javascript:void(0)">Abu saxiy savdo markazi Q-11 L-23 do'kon</a>
                                 </li>
                                 <li>
                                     <i data-feather="mail"></i>
-                                    <a href="javascript:void(0)">support@fastkart.com</a>
+                                    <a href="javascript:void(0)">harir.brend@gmail.com</a>
                                 </li>
                             </ul>
                         </div>

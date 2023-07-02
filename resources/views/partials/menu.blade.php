@@ -179,6 +179,30 @@
                         </a>
                     </li>
                 @endcan
+                @can('contact_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.contacts.index") }}" class="nav-link {{ request()->is("admin/contacts") || request()->is("admin/contacts/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-cogs">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.contact.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('static_page_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.static-pages.index") }}" class="nav-link {{ request()->is("admin/static-pages") || request()->is("admin/static-pages/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-cogs">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.staticPage.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
                     @can('profile_password_edit')
                         <li class="nav-item">

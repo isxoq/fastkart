@@ -17,6 +17,10 @@ class StoreTopLabelRequest extends FormRequest
     public function rules()
     {
         return [
+            'title' => [
+                'string',
+                'nullable',
+            ],
             'sort_order' => [
                 'nullable',
                 'integer',

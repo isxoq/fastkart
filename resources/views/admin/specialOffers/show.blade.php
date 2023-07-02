@@ -37,14 +37,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.specialOffer.fields.content') }}
-                        </th>
-                        <td>
-                            {{ $specialOffer->content }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.specialOffer.fields.sort_order') }}
                         </th>
                         <td>
@@ -57,6 +49,22 @@
                         </th>
                         <td>
                             {{ $specialOffer->offer->title ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.specialOffer.fields.title_1') }}
+                        </th>
+                        <td>
+                            {{ $specialOffer->title_1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.specialOffer.fields.title_2') }}
+                        </th>
+                        <td>
+                            {{ $specialOffer->title_2 }}
                         </td>
                     </tr>
                 </tbody>

@@ -10,10 +10,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
+
 
 class Product extends Model implements HasMedia
 {
-    use SoftDeletes, InteractsWithMedia, HasFactory;
+    use SoftDeletes, InteractsWithMedia, HasFactory,HasSlug;
 
     public $table = 'products';
 
@@ -31,6 +34,7 @@ class Product extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'slug',
         'category_id',
         'name',
         'price',
@@ -38,7 +42,6 @@ class Product extends Model implements HasMedia
         'description',
         'is_sale',
         'sale_price',
-        'sale',
         'sale_start',
         'end_sale',
         'status',
@@ -109,5 +112,12 @@ class Product extends Model implements HasMedia
     public function setEndSaleAttribute($value)
     {
         $this->attributes['end_sale'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+    }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name') // The column to generate the slug from
+            ->saveSlugsTo('slug'); // The column where the slug will be stored
     }
 }

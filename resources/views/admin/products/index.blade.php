@@ -26,6 +26,9 @@
                             {{ trans('cruds.product.fields.id') }}
                         </th>
                         <th>
+                            {{ trans('cruds.product.fields.slug') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.product.fields.category') }}
                         </th>
                         <th>
@@ -51,9 +54,6 @@
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.sale_price') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.product.fields.sale') }}
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.sale_start') }}
@@ -91,6 +91,9 @@
                                 {{ $product->id ?? '' }}
                             </td>
                             <td>
+                                {{ $product->slug ?? '' }}
+                            </td>
+                            <td>
                                 {{ $product->category->name ?? '' }}
                             </td>
                             <td>
@@ -126,9 +129,6 @@
                             </td>
                             <td>
                                 {{ $product->sale_price ?? '' }}
-                            </td>
-                            <td>
-                                {{ $product->sale ?? '' }}
                             </td>
                             <td>
                                 {{ $product->sale_start ?? '' }}

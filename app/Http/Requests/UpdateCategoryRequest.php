@@ -17,6 +17,10 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
+            'slug' => [
+                'string',
+                'nullable',
+            ],
             'name' => [
                 'string',
                 'required',

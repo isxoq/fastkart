@@ -19,14 +19,6 @@
                 <span class="help-block">{{ trans('cruds.specialOffer.fields.photo_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="content">{{ trans('cruds.specialOffer.fields.content') }}</label>
-                <textarea class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{{ old('content') }}</textarea>
-                @if($errors->has('content'))
-                    <span class="text-danger">{{ $errors->first('content') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.specialOffer.fields.content_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="sort_order">{{ trans('cruds.specialOffer.fields.sort_order') }}</label>
                 <input class="form-control {{ $errors->has('sort_order') ? 'is-invalid' : '' }}" type="number" name="sort_order" id="sort_order" value="{{ old('sort_order', '1') }}" step="1">
                 @if($errors->has('sort_order'))
@@ -45,6 +37,22 @@
                     <span class="text-danger">{{ $errors->first('offer') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.specialOffer.fields.offer_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_1">{{ trans('cruds.specialOffer.fields.title_1') }}</label>
+                <input class="form-control {{ $errors->has('title_1') ? 'is-invalid' : '' }}" type="text" name="title_1" id="title_1" value="{{ old('title_1', '') }}">
+                @if($errors->has('title_1'))
+                    <span class="text-danger">{{ $errors->first('title_1') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.specialOffer.fields.title_1_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title_2">{{ trans('cruds.specialOffer.fields.title_2') }}</label>
+                <input class="form-control {{ $errors->has('title_2') ? 'is-invalid' : '' }}" type="text" name="title_2" id="title_2" value="{{ old('title_2', '') }}">
+                @if($errors->has('title_2'))
+                    <span class="text-danger">{{ $errors->first('title_2') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.specialOffer.fields.title_2_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

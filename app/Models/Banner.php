@@ -33,7 +33,12 @@ class Banner extends Model implements HasMedia
 
     protected $fillable = [
         'type',
-        'content',
+        'title_1',
+        'title_2',
+        'title_3',
+        'title_4',
+        'title_5',
+        'url',
         'created_at',
         'updated_at',
         'deleted_at',

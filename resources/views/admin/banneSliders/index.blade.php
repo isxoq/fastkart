@@ -29,10 +29,19 @@
                             {{ trans('cruds.banneSlider.fields.photo') }}
                         </th>
                         <th>
-                            {{ trans('cruds.banneSlider.fields.content') }}
+                            {{ trans('cruds.banneSlider.fields.sort_order') }}
                         </th>
                         <th>
-                            {{ trans('cruds.banneSlider.fields.sort_order') }}
+                            {{ trans('cruds.banneSlider.fields.title_1') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.title_2') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.title_3') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.banneSlider.fields.url') }}
                         </th>
                         <th>
                             &nbsp;
@@ -56,10 +65,19 @@
                                 @endif
                             </td>
                             <td>
-                                {{ $banneSlider->content ?? '' }}
+                                {{ $banneSlider->sort_order ?? '' }}
                             </td>
                             <td>
-                                {{ $banneSlider->sort_order ?? '' }}
+                                {{ $banneSlider->title_1 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banneSlider->title_2 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banneSlider->title_3 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $banneSlider->url ?? '' }}
                             </td>
                             <td>
                                 @can('banne_slider_show')

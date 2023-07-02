@@ -29,13 +29,16 @@
                             {{ trans('cruds.specialOffer.fields.photo') }}
                         </th>
                         <th>
-                            {{ trans('cruds.specialOffer.fields.content') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.specialOffer.fields.sort_order') }}
                         </th>
                         <th>
                             {{ trans('cruds.specialOffer.fields.offer') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.specialOffer.fields.title_1') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.specialOffer.fields.title_2') }}
                         </th>
                         <th>
                             &nbsp;
@@ -59,13 +62,16 @@
                                 @endif
                             </td>
                             <td>
-                                {{ $specialOffer->content ?? '' }}
-                            </td>
-                            <td>
                                 {{ $specialOffer->sort_order ?? '' }}
                             </td>
                             <td>
                                 {{ $specialOffer->offer->title ?? '' }}
+                            </td>
+                            <td>
+                                {{ $specialOffer->title_1 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $specialOffer->title_2 ?? '' }}
                             </td>
                             <td>
                                 @can('special_offer_show')

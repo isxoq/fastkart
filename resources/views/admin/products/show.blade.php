@@ -25,6 +25,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.product.fields.slug') }}
+                        </th>
+                        <td>
+                            {{ $product->slug }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.product.fields.category') }}
                         </th>
                         <td>
@@ -101,14 +109,6 @@
                         </th>
                         <td>
                             {{ $product->sale_price }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.product.fields.sale') }}
-                        </th>
-                        <td>
-                            {{ $product->sale }}
                         </td>
                     </tr>
                     <tr>

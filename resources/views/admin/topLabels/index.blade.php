@@ -26,7 +26,7 @@
                             {{ trans('cruds.topLabel.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.topLabel.fields.content') }}
+                            {{ trans('cruds.topLabel.fields.title') }}
                         </th>
                         <th>
                             {{ trans('cruds.topLabel.fields.sort_order') }}
@@ -46,7 +46,7 @@
                                 {{ $topLabel->id ?? '' }}
                             </td>
                             <td>
-                                {{ $topLabel->content ?? '' }}
+                                {{ $topLabel->title ?? '' }}
                             </td>
                             <td>
                                 {{ $topLabel->sort_order ?? '' }}

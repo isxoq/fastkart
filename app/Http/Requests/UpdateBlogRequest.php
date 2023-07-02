@@ -17,6 +17,10 @@ class UpdateBlogRequest extends FormRequest
     public function rules()
     {
         return [
+            'slug' => [
+                'string',
+                'nullable',
+            ],
             'title' => [
                 'string',
                 'nullable',

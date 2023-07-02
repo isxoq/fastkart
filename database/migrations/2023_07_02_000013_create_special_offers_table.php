@@ -4,14 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBanneSlidersTable extends Migration
+class CreateSpecialOffersTable extends Migration
 {
     public function up()
     {
-        Schema::create('banne_sliders', function (Blueprint $table) {
+        Schema::create('special_offers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('content')->nullable();
             $table->integer('sort_order')->nullable();
+            $table->string('title_1')->nullable();
+            $table->string('title_2')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

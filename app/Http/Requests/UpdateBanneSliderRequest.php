@@ -23,6 +23,22 @@ class UpdateBanneSliderRequest extends FormRequest
                 'min:-2147483648',
                 'max:2147483647',
             ],
+            'title_1' => [
+                'string',
+                'nullable',
+            ],
+            'title_2' => [
+                'string',
+                'nullable',
+            ],
+            'title_3' => [
+                'string',
+                'nullable',
+            ],
+            'url' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

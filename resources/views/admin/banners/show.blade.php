@@ -33,14 +33,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.content') }}
-                        </th>
-                        <td>
-                            {{ $banner->content }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.banner.fields.photo') }}
                         </th>
                         <td>
@@ -49,6 +41,54 @@
                                     <img src="{{ $banner->photo->getUrl('thumb') }}">
                                 </a>
                             @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_1') }}
+                        </th>
+                        <td>
+                            {{ $banner->title_1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_2') }}
+                        </th>
+                        <td>
+                            {{ $banner->title_2 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_3') }}
+                        </th>
+                        <td>
+                            {{ $banner->title_3 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_4') }}
+                        </th>
+                        <td>
+                            {{ $banner->title_4 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banner.fields.title_5') }}
+                        </th>
+                        <td>
+                            {{ $banner->title_5 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.banner.fields.url') }}
+                        </th>
+                        <td>
+                            {{ $banner->url }}
                         </td>
                     </tr>
                 </tbody>

@@ -27,8 +27,11 @@ class BanneSlider extends Model implements HasMedia
     ];
 
     protected $fillable = [
-        'content',
         'sort_order',
+        'title_1',
+        'title_2',
+        'title_3',
+        'url',
         'created_at',
         'updated_at',
         'deleted_at',

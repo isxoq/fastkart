@@ -31,6 +31,7 @@ class Blog extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'slug',
         'title',
         'description',
         'start',

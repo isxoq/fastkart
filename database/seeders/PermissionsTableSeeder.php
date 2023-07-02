@@ -256,6 +256,46 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 62,
+                'title' => 'contact_create',
+            ],
+            [
+                'id'    => 63,
+                'title' => 'contact_edit',
+            ],
+            [
+                'id'    => 64,
+                'title' => 'contact_show',
+            ],
+            [
+                'id'    => 65,
+                'title' => 'contact_delete',
+            ],
+            [
+                'id'    => 66,
+                'title' => 'contact_access',
+            ],
+            [
+                'id'    => 67,
+                'title' => 'static_page_create',
+            ],
+            [
+                'id'    => 68,
+                'title' => 'static_page_edit',
+            ],
+            [
+                'id'    => 69,
+                'title' => 'static_page_show',
+            ],
+            [
+                'id'    => 70,
+                'title' => 'static_page_delete',
+            ],
+            [
+                'id'    => 71,
+                'title' => 'static_page_access',
+            ],
+            [
+                'id'    => 72,
                 'title' => 'profile_password_edit',
             ],
         ];

@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Category extends Model implements HasMedia
 {
-    use SoftDeletes, InteractsWithMedia, HasFactory;
+    use SoftDeletes, InteractsWithMedia, HasFactory, HasSlug;
 
     public $table = 'categories';
 
@@ -27,6 +29,7 @@ class Category extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'slug',
         'name',
         'category_id',
         'status',
@@ -55,9 +58,9 @@ class Category extends Model implements HasMedia
     {
         $file = $this->getMedia('icon')->last();
         if ($file) {
-            $file->url       = $file->getUrl();
+            $file->url = $file->getUrl();
             $file->thumbnail = $file->getUrl('thumb');
-            $file->preview   = $file->getUrl('preview');
+            $file->preview = $file->getUrl('preview');
         }
 
         return $file;
@@ -67,4 +70,33 @@ class Category extends Model implements HasMedia
     {
         return $this->belongsTo(self::class, 'category_id');
     }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name') // The column to generate the slug from
+            ->saveSlugsTo('slug'); // The column where the slug will be stored
+    }
+
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'category_id');
+    }
+
+    public function childrenRecursive()
+    {
+        return $this->hasMany(Category::class, 'category_id')->with('childrenRecursive');
+    }
+
+    public function url()
+    {
+        return url("category/{$this->slug}");
+    }
+
 }
