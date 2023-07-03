@@ -160,13 +160,13 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                                     </div>
                                 </li>
                                 <li class="right-side">
-                                    <a href="tel:+998936448111" class="delivery-login-box">
+                                    <a href="tel:+998903889993" class="delivery-login-box">
                                         <div class="delivery-icon">
                                             <i data-feather="phone-call"></i>
                                         </div>
                                         <div class="delivery-detail">
-                                            <h6>24/7 Delivery</h6>
-                                            <h5>(93) 644 81 11</h5>
+                                            <h6>24/7 Yetkazish</h6>
+                                            <h5>(90) 388 99 93</h5>
                                         </div>
                                     </a>
                                 </li>
@@ -339,50 +339,11 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                                 </div>
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a href="/" class="nav-link nav-hand">Bosh sahifa</a>
-
-
-                                            {{--                                            <ul class="dropdown-menu">--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index.html">Kartshop</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-2.html">Sweetshop</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-3.html">Organic</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-4.html">Supershop</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-5.html">Classic shop</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-6.html">Furniture</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-7.html">Search Oriented</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-8.html">Category Focus</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                                <li>--}}
-                                            {{--                                                    <a class="dropdown-item" href="index-9.html">Fashion</a>--}}
-                                            {{--                                                </li>--}}
-                                            {{--                                            </ul>--}}
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/" class="nav-link nav-hand">Blog</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/" class="nav-link nav-hand">Biz haqimizda</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="/" class="nav-link nav-hand">Biz bilan bog'lanish</a>
-                                        </li>
+                                        @foreach(\App\Classes\Helper::getMenu() as $menu)
+                                            <li class="nav-item">
+                                                <a href="{{$menu['url']}}" class="nav-link nav-hand">{{$menu['title']}}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

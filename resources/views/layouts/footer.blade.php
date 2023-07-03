@@ -110,24 +110,16 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
 
                 <div class="col-xl col-lg-2 col-sm-3">
                     <div class="footer-title">
-                        <h4>Useful Links</h4>
+                        <h4>Foydali havolalar</h4>
                     </div>
 
                     <div class="footer-contain">
                         <ul>
-                            <li>
-                                <a href="index.html" class="text-content">Home</a>
-                            </li>
-
-                            <li>
-                                <a href="about-us.html" class="text-content">About Us</a>
-                            </li>
-                            <li>
-                                <a href="blog-list.html" class="text-content">Blog</a>
-                            </li>
-                            <li>
-                                <a href="contact-us.html" class="text-content">Contact Us</a>
-                            </li>
+                            @foreach(\App\Classes\Helper::getMenu() as $menu)
+                                <li>
+                                    <a href="{{$menu['url']}}" class="text-content">{{$menu['title']}}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -163,7 +155,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
 
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="footer-title">
-                        <h4>Contact Us</h4>
+                        <h4>Bog'lanish</h4>
                     </div>
 
                     <div class="footer-contact">
@@ -172,8 +164,8 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                 <div class="footer-number">
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
-                                        <h6 class="text-content">Hotline 24/7 :</h6>
-                                        <h5>+91 888 104 2340</h5>
+                                        <h6 class="text-content">Doim 24/7 :</h6>
+                                        <a href="tel:+998903889993"><h5>+998 90 388 99 93</h5></a>
                                     </div>
                                 </div>
                             </li>
@@ -183,7 +175,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="mail"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Email Address :</h6>
-                                        <h5>fastkart@hotmail.com</h5>
+                                        <h5>harir.brend@gmail.com</h5>
                                     </div>
                                 </div>
                             </li>
@@ -213,7 +205,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
 
         <div class="sub-footer section-small-space">
             <div class="reserve">
-                <h6 class="text-content">©2022 Fastkart All rights reserved</h6>
+                <h6 class="text-content">©{{date("Y")}} Harir All rights reserved</h6>
             </div>
 
 {{--            <div class="payment">--}}
@@ -221,26 +213,26 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
 {{--            </div>--}}
 
             <div class="social-link">
-                <h6 class="text-content">Stay connected :</h6>
+                <h6 class="text-content">Bizni kuzating :</h6>
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://facebook.com/hariruz" target="_blank">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/" target="_blank">
-                            <i class="fa-brands fa-twitter"></i>
+                        <a href="https://youtube.com/@harir-pardalarsaloni2027" target="_blank">
+                            <i class="fa-brands fa-youtube"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/" target="_blank">
+                        <a href="https://instagram.com/hariruz" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://in.pinterest.com/" target="_blank">
-                            <i class="fa-brands fa-pinterest-p"></i>
+                        <a href="https://t.me/hariruzb" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
                         </a>
                     </li>
                 </ul>
