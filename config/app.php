@@ -16,6 +16,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'zayavka_group' => env('ZAYAVKA_GROUP_ID', '-1001508142842'),
+    'bot_token' => env('TELEGRAM_BOT_TOKEN', '6345209901:AAHyuNjM1_eYUlXsGkI9WCh3zOtd53qNLe0'),
 
     "cache_minutes" => env("DB_CACHE_TIME_MINUTES", 10),
     /*
