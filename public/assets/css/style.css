@@ -24,10 +24,10 @@
 }
 
 :root {
-  --theme-color: #0da487;
-  --theme-color-rgb: 13, 164, 135;
-  --theme-color1: #0e947a;
-  --theme-color1-rgb: 14, 148, 122;
+  --theme-color: #1b3d3a;
+  --theme-color-rgb: 27, 61, 58;
+  --theme-color1: #135649;
+  --theme-color1-rgb: 19, 86, 72;
   --theme-color2: linear-gradient(90.56deg, var(--theme-color1) 8.46%, var(--theme-color) 62.97%) ;
 }
 
@@ -6448,11 +6448,11 @@ header .top-nav .navbar-top .middle-box .search-box .input-group .form-control:f
   background-color: #ffffff;
 }
 header .top-nav .navbar-top .middle-box .search-box .input-group button {
-  background-color: #ffa53b;
+  background-color: #d39d85;
   color: #ffffff;
   padding: 14px 20px;
   border-radius: 5px;
-  border: 1px solid #ffa53b;
+  border: 1px solid #d39d85;
 }
 header .top-nav .navbar-top .middle-box .search-box .input-group button.bg-theme {
   background-color: var(--theme-color);

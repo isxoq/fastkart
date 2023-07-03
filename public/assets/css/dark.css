@@ -6448,11 +6448,11 @@ header .top-nav .navbar-top .middle-box .search-box .input-group .form-control:f
   background-color: #2a2d2d;
 }
 header .top-nav .navbar-top .middle-box .search-box .input-group button {
-  background-color: #ffa53b;
+  background-color: #d39d85;
   color: #2a2d2d;
   padding: 14px 20px;
   border-radius: 5px;
-  border: 1px solid #ffa53b;
+  border: 1px solid #d39d85;
 }
 header .top-nav .navbar-top .middle-box .search-box .input-group button.bg-theme {
   background-color: var(--theme-color);
