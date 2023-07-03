@@ -73,8 +73,6 @@ return [
             'id_helper'         => ' ',
             'name'              => 'Name',
             'name_helper'       => 'Kategoriya nomi',
-            'icon'              => 'Icon',
-            'icon_helper'       => 'Kategoruya ikonkasi',
             'status'            => 'Status',
             'status_helper'     => ' ',
             'created_at'        => 'Created at',
@@ -87,6 +85,8 @@ return [
             'category_helper'   => ' ',
             'slug'              => 'Slug',
             'slug_helper'       => ' ',
+            'icon'              => 'Ikonkasi',
+            'icon_helper'       => 'SVG formatida ikonka yuklang',
         ],
     ],
     'product' => [

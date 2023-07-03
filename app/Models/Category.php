@@ -54,18 +54,6 @@ class Category extends Model implements HasMedia
         return $this->hasMany(self::class, 'category_id', 'id');
     }
 
-    public function getIconAttribute()
-    {
-        $file = $this->getMedia('icon')->last();
-        if ($file) {
-            $file->url = $file->getUrl();
-            $file->thumbnail = $file->getUrl('thumb');
-            $file->preview = $file->getUrl('preview');
-        }
-
-        return $file;
-    }
-
     public function category()
     {
         return $this->belongsTo(self::class, 'category_id');
@@ -94,9 +82,14 @@ class Category extends Model implements HasMedia
         return $this->hasMany(Category::class, 'category_id')->with('childrenRecursive');
     }
 
+    public function iconUrl()
+    {
+        $media = $this->getMedia('icon')->last();
+        return $media?->getUrl();
+    }
+
     public function url()
     {
         return url("category/{$this->slug}");
     }
-
 }

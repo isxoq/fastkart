@@ -41,18 +41,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.icon') }}
-                        </th>
-                        <td>
-                            @if($category->icon)
-                                <a href="{{ $category->icon->getUrl() }}" target="_blank" style="display: inline-block">
-                                    <img src="{{ $category->icon->getUrl('thumb') }}">
-                                </a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.category.fields.category') }}
                         </th>
                         <td>
@@ -65,6 +53,18 @@
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.category.fields.icon') }}
+                        </th>
+                        <td>
+                            @if($category->icon)
+                                <a href="{{ $category->icon->getUrl() }}" target="_blank">
+                                    {{ trans('global.view_file') }}
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 </tbody>

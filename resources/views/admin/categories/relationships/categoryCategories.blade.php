@@ -31,13 +31,13 @@
                                 {{ trans('cruds.category.fields.name') }}
                             </th>
                             <th>
-                                {{ trans('cruds.category.fields.icon') }}
-                            </th>
-                            <th>
                                 {{ trans('cruds.category.fields.category') }}
                             </th>
                             <th>
                                 {{ trans('cruds.category.fields.status') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.category.fields.icon') }}
                             </th>
                             <th>
                                 &nbsp;
@@ -60,18 +60,18 @@
                                     {{ $category->name ?? '' }}
                                 </td>
                                 <td>
-                                    @if($category->icon)
-                                        <a href="{{ $category->icon->getUrl() }}" target="_blank" style="display: inline-block">
-                                            <img src="{{ $category->icon->getUrl('thumb') }}">
-                                        </a>
-                                    @endif
-                                </td>
-                                <td>
                                     {{ $category->category->name ?? '' }}
                                 </td>
                                 <td>
                                     <span style="display:none">{{ $category->status ?? '' }}</span>
                                     <input type="checkbox" disabled="disabled" {{ $category->status ? 'checked' : '' }}>
+                                </td>
+                                <td>
+                                    @if($category->icon)
+                                        <a href="{{ $category->icon->getUrl() }}" target="_blank">
+                                            {{ trans('global.view_file') }}
+                                        </a>
+                                    @endif
                                 </td>
                                 <td>
                                     @can('category_show')

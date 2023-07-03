@@ -5,7 +5,6 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
     return \App\Models\Category::with('childrenRecursive')->whereNull('category_id')->get();
 });
 
-
 $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Classes\Helper::cacheTime(), function () {
     return \App\Models\TopLabel::query()
         ->orderBy('sort_order')
@@ -300,7 +299,7 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                                     <li class="onhover-category-list">
                                         <a href="{{$category->childrenRecursive->count()?"javascript:void(0)":$category->url()}}"
                                            class="category-name">
-                                            <img src="{{$category->icon?->url??"../assets/svg/1/vegetable.svg"}}" alt="">
+                                            <img src="{{$category->iconUrl()??"../assets/svg/1/vegetable.svg"}}" alt="">
                                             <h6>{!! $category->name !!}</h6>
                                             {!! $category->childrenRecursive->count()?'<i class="fa-solid fa-angle-right"></i>':"" !!}
                                         </a>
