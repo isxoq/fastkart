@@ -7,6 +7,10 @@ use App\Http\Controllers\Frontend\CatalogController;
 Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/category/{category}', [CatalogController::class, "category"])->name('category');
 Route::get('/product/{category}', [CatalogController::class, "detail"])->name('product_detail');
+Route::get('/blog', [\App\Http\Controllers\Frontend\BlogController::class, "index"])->name('blog_detail');
+Route::get('/blog/{blog}', [\App\Http\Controllers\Frontend\BlogController::class, "detail"])->name('blog_detail');
+Route::get('/about-us', [\App\Http\Controllers\Frontend\StaticPageController::class, "aboutUs"])->name('about_us');
+Route::get('/contact-us', [\App\Http\Controllers\Frontend\StaticPageController::class, "contactUs"])->name('contact_us');
 
 Auth::routes(['register' => false]);
 
