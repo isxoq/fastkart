@@ -39,11 +39,6 @@ class Category extends Model implements HasMedia
         'deleted_at',
     ];
 
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
-
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

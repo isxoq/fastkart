@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Request;
 class CatalogController extends Controller
 {
 
-    public function category(Request $request,Category $category)
+    public function category(Request $request, $slug)
     {
-        return view("frontend.category",compact("category"));
+        $category = Category::findBySlug($slug);
+        if (!$category) {
+            abort(404);
+        }
+        return view("frontend.category", compact("category"));
     }
 
 
@@ -20,7 +24,6 @@ class CatalogController extends Controller
         return view("frontend.detail");
 
     }
-
 
 
 }
