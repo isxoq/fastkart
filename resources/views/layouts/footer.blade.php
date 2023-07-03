@@ -65,7 +65,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="footer-logo">
                         <div class="theme-logo">
-                            <a href="index.html">
+                            <a href="{{url("/")}}">
                                 <img src="../assets/images/logo/logo.svg" class="blur-up lazyload" alt="">
                             </a>
                         </div>
