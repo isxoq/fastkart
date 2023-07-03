@@ -79,6 +79,8 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                 <div class="col-xl-4 ratio_65">
                     <div class="row g-4">
 
+                        <?php   $i = 1; ?>
+
                         @foreach($smallBanners as $smallBanner)
 
                             <div class="col-xl-12 col-md-6">
@@ -86,11 +88,29 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                                     <img src="{{$smallBanner->photo->url}}" class="bg-img blur-up lazyload"
                                          alt="">
                                     <div class="home-detail p-center-left home-p-sm w-75">
-                                        {!! $smallBanner->content !!}
+                                        @if($i==1)
+                                            <div>
+                                                <h2 class="mt-0 text-danger">45% <span
+                                                        class="discount text-title">OFF</span>
+                                                </h2>
+                                                <h3 class="theme-color">Nut Collection</h3>
+                                                <p class="w-75">We deliver organic vegetables &amp; fruits</p>
+                                                <a href="shop-left-sidebar.html" class="shop-button">Shop Now <i
+                                                        class="fa-solid fa-right-long"></i></a>
+                                            </div>
+                                        @else
+                                            <div>
+                                                <h3 class="mt-0 theme-color fw-bold">Healthy Food</h3>
+                                                <h4 class="text-danger">Organic Market</h4>
+                                                <p class="organic">Start your daily shopping with some Organic food</p>
+                                                <a href="shop-left-sidebar.html" class="shop-button">Shop Now <i
+                                                        class="fa-solid fa-right-long"></i></a>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-
+                            <?php $i++?>
                         @endforeach
 
 
@@ -111,7 +131,13 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                         <div class="banner-contain hover-effect">
                             <img src="{{$slider->photo->url}}" class="bg-img blur-up lazyload" alt="">
                             <div class="banner-details">
-                                {!! $slider->content !!}
+                                <div class="banner-box">
+                                    <h6 class="text-danger">{{$slider->title_1}}</h6>
+                                    <h5>{{$slider->title_2}}</h5>
+                                    <h6 class="text-content">{{$slider->title_3}}</h6>
+                                </div>
+                                <a href="{{$slider->url}}" class="banner-button text-white" tabindex="0">Shop Now <i
+                                        class="fa-solid fa-right-long ms-2"></i></a>
                             </div>
                         </div>
                     </div>
