@@ -33,7 +33,7 @@
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p>{{\App\Classes\Helper::info("phone1")}}</p>
+                                                    <a href="tel:{{\App\Classes\Helper::info("phone1")}}">{{\App\Classes\Helper::info("phone1")}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -48,7 +48,7 @@
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p>{{\App\Classes\Helper::info("email")}}</p>
+                                                    <a href="mailto:{{\App\Classes\Helper::info("email")}}">{{\App\Classes\Helper::info("email")}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p>{{\App\Classes\Helper::info("address2")}}</p>
+                                                    <a target="_blank" href="{{\App\Classes\Helper::info("yandex2")}}">{{\App\Classes\Helper::info("address2")}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -78,7 +78,7 @@
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p>{{\App\Classes\Helper::info("address1")}}</p>
+                                                    <a target="_blank" href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
                                                 </div>
                                             </div>
                                         </div>

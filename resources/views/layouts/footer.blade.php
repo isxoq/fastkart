@@ -79,7 +79,9 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                             <ul class="address">
                                 <li>
                                     <i data-feather="home"></i>
-                                    <a href="javascript:void(0)">Abu saxiy savdo markazi Q-11 L-23 do'kon</a>
+                                    <a target="_blank" href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
+
+{{--                                    <a href="javascript:void(0)">Abu saxiy savdo markazi Q-11 L-23 do'kon</a>--}}
                                 </li>
 {{--                                <li>--}}
 {{--                                    <i data-feather="mail"></i>--}}
@@ -165,7 +167,8 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Doim 24/7 :</h6>
-                                        <a href="tel:+998903889993"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>
+                                        <a href="tel:{{\App\Classes\Helper::info("phone1")}}"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>
+{{--                                        <a href="tel:+998903889993"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>--}}
                                     </div>
                                 </div>
                             </li>
@@ -175,7 +178,10 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="mail"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Email Address :</h6>
-                                        <h5>{{\App\Classes\Helper::info("email")}}</h5>
+                                        <h5>
+                                            <a href="mailto:{{\App\Classes\Helper::info("email")}}">{{\App\Classes\Helper::info("email")}}</a>
+{{--                                            {{\App\Classes\Helper::info("email")}}--}}
+                                        </h5>
                                     </div>
                                 </div>
                             </li>
