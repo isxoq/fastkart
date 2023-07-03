@@ -161,7 +161,7 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                                 @foreach($categoriesWithoutChildren as $category)
                                     <li class="{{$loop->last?"pb-30":""}}">
                                         <div class="category-list">
-                                            <img src="{{$category->icon?->url??"../assets/svg/1/vegetable.svg"}}"
+                                            <img src="{{$category->iconUrl()??"../assets/svg/1/vegetable.svg"}}"
                                                  class="blur-up lazyload"
                                                  alt="">
                                             <h5>
