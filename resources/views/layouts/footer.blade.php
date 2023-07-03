@@ -81,10 +81,10 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="home"></i>
                                     <a href="javascript:void(0)">Abu saxiy savdo markazi Q-11 L-23 do'kon</a>
                                 </li>
-                                <li>
-                                    <i data-feather="mail"></i>
-                                    <a href="javascript:void(0)">harir.brend@gmail.com</a>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <i data-feather="mail"></i>--}}
+{{--                                    <a href="javascript:void(0)">harir.brend@gmail.com</a>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                     </div>
@@ -165,7 +165,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Doim 24/7 :</h6>
-                                        <a href="tel:+998903889993"><h5>+998 90 388 99 93</h5></a>
+                                        <a href="tel:+998903889993"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>
                                     </div>
                                 </div>
                             </li>
@@ -175,7 +175,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="mail"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Email Address :</h6>
-                                        <h5>harir.brend@gmail.com</h5>
+                                        <h5>{{\App\Classes\Helper::info("email")}}</h5>
                                     </div>
                                 </div>
                             </li>

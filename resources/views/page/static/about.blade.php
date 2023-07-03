@@ -1,6 +1,12 @@
 @extends('layouts.frontend')
 
 
+<?php
+
+
+$members = \App\Models\Contact::all();
+
+?>
 @section("content")
 
     <!-- Fresh Vegetable Section Start -->
@@ -12,7 +18,7 @@
                         <div class="col-6">
                             <div class="fresh-image-2">
                                 <div>
-                                    <img src="../assets/images/inner-page/about-us/1.jpg"
+                                    <img src="{{asset("images/about1.jpg")}}"
                                          class="bg-img blur-up lazyload" alt="">
                                 </div>
                             </div>
@@ -21,7 +27,7 @@
                         <div class="col-6">
                             <div class="fresh-image">
                                 <div>
-                                    <img src="../assets/images/inner-page/about-us/2.jpg"
+                                    <img src="{{asset("images/about2.jpg")}}"
                                          class="bg-img blur-up lazyload" alt="">
                                 </div>
                             </div>
@@ -33,27 +39,26 @@
                     <div class="fresh-contain p-center-left">
                         <div>
                             <div class="review-title">
-                                <h4>About Us</h4>
-                                <h2>We make Organic Food In Market</h2>
+                                <h4>Biz haqimizda</h4>
+                                <h2>Harir - parda va aksessuarlar</h2>
                             </div>
 
                             <div class="delivery-list">
-                                <p class="text-content">Just a few seconds to measure your body temperature. Up to 5
-                                    users! The battery lasts up to 2 years. There are many variations of passages of
-                                    Lorem Ipsum available.We started in 2019 and haven't stopped smashing it since. A
-                                    global brand that doesn't sleep, we are 24/7 and always bringing something new with
-                                    over 100 new products dropping on the monhtly, bringing you the latest looks for
-                                    less.</p>
+                                <p class="text-content">Harir - sifatli parda matolari va aksessuarlarini o‘zida
+                                    jamlagan do‘kon. Uy yoki ofisingizga parda qildirmoqchimisiz? Bu borada Harir
+                                    pardalar saloni sizga yordam beradi. Siz buyurtma bering, biz esa siz tanlagan
+                                    pardani tikib uy yoki ofisingizga ilib beramiz.</p>
 
                                 <ul class="delivery-box">
                                     <li>
                                         <div class="delivery-box">
                                             <div class="delivery-icon">
-                                                <img src="../assets/svg/3/delivery.svg" class="blur-up lazyload" alt="">
+                                                <img src="{{asset("images/moshina.svg")}}" class="blur-up lazyload"
+                                                     alt="">
                                             </div>
 
                                             <div class="delivery-detail">
-                                                <h5 class="text">Free delivery for all orders</h5>
+                                                <h5 class="text">Yetkazish va o‘rnatish xizmati</h5>
                                             </div>
                                         </div>
                                     </li>
@@ -61,11 +66,12 @@
                                     <li>
                                         <div class="delivery-box">
                                             <div class="delivery-icon">
-                                                <img src="../assets/svg/3/leaf.svg" class="blur-up lazyload" alt="">
+                                                <img src="{{asset("images/idividuvaldizayn.svg")}}"
+                                                     class="blur-up lazyload" alt="">
                                             </div>
 
                                             <div class="delivery-detail">
-                                                <h5 class="text">Only fresh foods</h5>
+                                                <h5 class="text">Individual dizayner xizmati</h5>
                                             </div>
                                         </div>
                                     </li>
@@ -73,26 +79,16 @@
                                     <li>
                                         <div class="delivery-box">
                                             <div class="delivery-icon">
-                                                <img src="../assets/svg/3/delivery.svg" class="blur-up lazyload" alt="">
+                                                <img src="{{asset("images/dardaaksessuarlar.svg")}}"
+                                                     class="blur-up lazyload" alt="">
                                             </div>
 
                                             <div class="delivery-detail">
-                                                <h5 class="text">Free delivery for all orders</h5>
+                                                <h5 class="text">Pardalar va aksessuarlar </h5>
                                             </div>
                                         </div>
                                     </li>
 
-                                    <li>
-                                        <div class="delivery-box">
-                                            <div class="delivery-icon">
-                                                <img src="../assets/svg/3/leaf.svg" class="blur-up lazyload" alt="">
-                                            </div>
-
-                                            <div class="delivery-detail">
-                                                <h5 class="text">Only fresh foods</h5>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -107,211 +103,56 @@
     <section class="team-section section-lg-space">
         <div class="container-fluid-lg">
             <div class="about-us-title text-center">
-                <h4 class="text-content">Our Creative Team</h4>
-                <h2 class="center">fastkart team member</h2>
+                <h4 class="text-content">Bizning kreativ jamoamiz</h4>
+                <h2 class="center">Harir jamoasi a'zolari</h2>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="slider-user product-wrapper">
-                        <div>
-                            <div class="team-box">
-                                <div class="team-iamge">
-                                    <img src="../assets/images/inner-page/user/1.jpg" class="img-fluid blur-up lazyload"
-                                         alt="">
-                                </div>
+                        @foreach($members as $member)
 
-                                <div class="team-name">
-                                    <h3>Anna Baranov</h3>
-                                    <h5>Marketing</h5>
-                                    <p>cheeseburger airedale mozzarella the big cheese fondue.</p>
-                                    <ul class="team-media">
-                                        <li>
-                                            <a href="https://www.facebook.com/" class="fb-bg">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        </li>
+                            <div>
+                                <div class="team-box">
+                                    <div class="team-iamge">
+                                        <img src="{{$member->photo?->url}}"
+                                             class="img-fluid blur-up lazyload"
+                                             alt="">
+                                    </div>
 
-                                        <li>
-                                            <a href="https://in.pinterest.com/" class="pint-bg">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
+                                    <div class="team-name">
+                                        <h3>{{$member->full_name}}</h3>
+                                        <h5>{{$member->profession}}</h5>
+                                        <p>{{$member->short_description}}</p>
+                                        <ul class="team-media">
+                                            <li>
+                                                <a href="{{$member->facebook}}" class="fb-bg">
+                                                    <i class="fa-brands fa-facebook-f"></i>
+                                                </a>
+                                            </li>
 
-                                        <li>
-                                            <a href="https://twitter.com/" class="twitter-bg">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        </li>
+                                            <li>
+                                                <a href="{{$member->telegram}}" class="pint-bg">
+                                                    <i class="fa-brands fa-telegram"></i>
+                                                </a>
+                                            </li>
 
-                                        <li>
-                                            <a href="https://www.instagram.com/" class="insta-bg">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                            <li>
+                                                <a href="{{$member->whatsapp}}" class="twitter-bg">
+                                                    <i class="fa-brands fa-whatsapp"></i>
+                                                </a>
+                                            </li>
 
-                        <div>
-                            <div class="team-box">
-                                <div class="team-iamge">
-                                    <img src="../assets/images/inner-page/user/2.jpg" class="img-fluid blur-up lazyload"
-                                         alt="">
-                                </div>
-
-                                <div class="team-name">
-                                    <h3>Anna Baranov</h3>
-                                    <h5>Marketing</h5>
-                                    <p>cheese on toast mozzarella bavarian bergkase smelly cheese cheesy feet.</p>
-                                    <ul class="team-media">
-                                        <li>
-                                            <a href="https://www.facebook.com/" class="fb-bg">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://in.pinterest.com/" class="pint-bg">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://twitter.com/" class="twitter-bg">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://www.instagram.com/" class="insta-bg">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                            <li>
+                                                <a href="{{$member->instagram}}" class="insta-bg">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <div class="team-box">
-                                <div class="team-iamge">
-                                    <img src="../assets/images/inner-page/user/3.jpg" class="img-fluid blur-up lazyload"
-                                         alt="">
-                                </div>
-
-                                <div class="team-name">
-                                    <h3>Anna Baranov</h3>
-                                    <h5>Marketing</h5>
-                                    <p>camembert de normandie. Bocconcini rubber cheese fromage frais port-salut.</p>
-                                    <ul class="team-media">
-                                        <li>
-                                            <a href="https://www.facebook.com/" class="fb-bg">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://in.pinterest.com/" class="pint-bg">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://twitter.com/" class="twitter-bg">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://www.instagram.com/" class="insta-bg">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="team-box">
-                                <div class="team-iamge">
-                                    <img src="../assets/images/inner-page/user/4.jpg" class="img-fluid blur-up lazyload"
-                                         alt="">
-                                </div>
-
-                                <div class="team-name">
-                                    <h3>Anna Baranov</h3>
-                                    <h5>Marketing</h5>
-                                    <p>Fondue stinking bishop goat. Macaroni cheese croque monsieur cottage cheese.</p>
-                                    <ul class="team-media">
-                                        <li>
-                                            <a href="https://www.facebook.com/" class="fb-bg">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://in.pinterest.com/" class="pint-bg">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://twitter.com/" class="twitter-bg">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://www.instagram.com/" class="insta-bg">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="team-box">
-                                <div class="team-iamge">
-                                    <img src="../assets/images/inner-page/user/1.jpg" class="img-fluid blur-up lazyload"
-                                         alt="">
-                                </div>
-
-                                <div class="team-name">
-                                    <h3>Anna Baranov</h3>
-                                    <h5>Marketing</h5>
-                                    <p>squirty cheese cheddar macaroni cheese airedale cheese triangles.</p>
-                                    <ul class="team-media">
-                                        <li>
-                                            <a href="https://www.facebook.com/" class="fb-bg">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://in.pinterest.com/" class="pint-bg">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://twitter.com/" class="twitter-bg">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://www.instagram.com/" class="insta-bg">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

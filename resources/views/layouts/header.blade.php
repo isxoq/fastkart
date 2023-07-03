@@ -166,7 +166,7 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                                         </div>
                                         <div class="delivery-detail">
                                             <h6>24/7 Yetkazish</h6>
-                                            <h5>(90) 388 99 93</h5>
+                                            <h5>{{\App\Classes\Helper::info("phone3")}}</h5>
                                         </div>
                                     </a>
                                 </li>

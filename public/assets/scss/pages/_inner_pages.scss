@@ -3982,6 +3982,7 @@
     h2 {
         font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: calc(12px + (30 - 12) * ((100vw - 320px) / (1920 - 320)));
+        text-transform: none!important;
         width: 80%;
         line-height: 1.3;
         position: relative;
