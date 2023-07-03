@@ -33,6 +33,7 @@ class Category extends Model implements HasMedia
         'name',
         'category_id',
         'status',
+        'sort_order',
         'created_at',
         'updated_at',
         'deleted_at',

@@ -25,6 +25,10 @@ class StoreCategoryRequest extends FormRequest
                 'string',
                 'required',
             ],
+            'sort_order' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

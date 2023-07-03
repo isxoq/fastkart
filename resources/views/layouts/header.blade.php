@@ -1,8 +1,7 @@
 <?php
 
-
 $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Classes\Helper::cacheTime(), function () {
-    return \App\Models\Category::with('childrenRecursive')->whereNull('category_id')->get();
+    return \App\Models\Category::with('childrenRecursive')->orderBy("sort_order")->whereNull('category_id')->get();
 });
 
 $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Classes\Helper::cacheTime(), function () {

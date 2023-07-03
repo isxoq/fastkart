@@ -87,6 +87,8 @@ return [
             'slug_helper'       => ' ',
             'icon'              => 'Ikonkasi',
             'icon_helper'       => 'SVG formatida ikonka yuklang',
+            'sort_order'        => 'Saralash qoidasi',
+            'sort_order_helper' => ' ',
         ],
     ],
     'product' => [

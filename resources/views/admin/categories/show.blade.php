@@ -67,6 +67,14 @@
                             @endif
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.category.fields.sort_order') }}
+                        </th>
+                        <td>
+                            {{ $category->sort_order }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

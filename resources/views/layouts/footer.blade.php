@@ -1,9 +1,9 @@
 <?php
 
 
-$categoriesWithoutChildren  = \App\Models\Category::with('childrenRecursive')
-    ->whereDoesntHave('childrenRecursive')
-    ->get();
+$categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Classes\Helper::cacheTime(), function () {
+    return \App\Models\Category::with('childrenRecursive')->orderBy("sort_order")->whereNull('category_id')->get();
+});
 
 ?>
 
@@ -92,29 +92,18 @@ $categoriesWithoutChildren  = \App\Models\Category::with('childrenRecursive')
 
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                     <div class="footer-title">
-                        <h4>Categories</h4>
+                        <h4>Kategoriyalar</h4>
                     </div>
 
                     <div class="footer-contain">
                         <ul>
+                            @foreach($categories as $category)
+
                             <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Vegetables & Fruit</a>
+                                <a href="{{$category->url()}}" class="text-content">{{$category->name}}</a>
                             </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Beverages</a>
-                            </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Meats & Seafood</a>
-                            </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Frozen Foods</a>
-                            </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Biscuits & Snacks</a>
-                            </li>
-                            <li>
-                                <a href="shop-left-sidebar.html" class="text-content">Grocery & Staples</a>
-                            </li>
+                            @endforeach
+
                         </ul>
                     </div>
                 </div>

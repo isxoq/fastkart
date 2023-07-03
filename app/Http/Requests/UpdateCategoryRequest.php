@@ -25,6 +25,10 @@ class UpdateCategoryRequest extends FormRequest
                 'string',
                 'required',
             ],
+            'sort_order' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

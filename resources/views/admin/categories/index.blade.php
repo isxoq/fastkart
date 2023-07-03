@@ -41,6 +41,9 @@
                             {{ trans('cruds.category.fields.icon') }}
                         </th>
                         <th>
+                            {{ trans('cruds.category.fields.sort_order') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -73,6 +76,9 @@
                                         {{ trans('global.view_file') }}
                                     </a>
                                 @endif
+                            </td>
+                            <td>
+                                {{ $category->sort_order ?? '' }}
                             </td>
                             <td>
                                 @can('category_show')
