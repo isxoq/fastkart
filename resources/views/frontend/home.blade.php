@@ -12,47 +12,6 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
 
 @section('content')
 
-    <!-- mobile fix menu start -->
-    <div class="mobile-menu d-md-none d-block mobile-cart">
-        <ul>
-            <li class="active">
-                <a href="index.html">
-                    <i class="iconly-Home icli"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-
-            <li class="mobile-category">
-                <a href="javascript:void(0)">
-                    <i class="iconly-Category icli js-link"></i>
-                    <span>Category</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="search.html" class="search-box">
-                    <i class="iconly-Search icli"></i>
-                    <span>Search</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="wishlist.html" class="notifi-wishlist">
-                    <i class="iconly-Heart icli"></i>
-                    <span>My Wish</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="cart.html">
-                    <i class="iconly-Bag-2 icli fly-cate"></i>
-                    <span>Cart</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- mobile fix menu end -->
-
     <!-- Home Section Start -->
     <section class="home-section pt-2">
         <div class="container-fluid-lg">
@@ -90,20 +49,20 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                                     <div class="home-detail p-center-left home-p-sm w-75">
                                         @if($i==1)
                                             <div>
-                                                <h2 class="mt-0 text-danger">45% <span
-                                                        class="discount text-title">OFF</span>
+                                                <h2 class="mt-0 text-danger">{{$smallBanner->title_1}}<span
+                                                        class="discount text-title">{{$smallBanner->title_2}}</span>
                                                 </h2>
-                                                <h3 class="theme-color">Nut Collection</h3>
-                                                <p class="w-75">We deliver organic vegetables &amp; fruits</p>
-                                                <a href="shop-left-sidebar.html" class="shop-button">Shop Now <i
+                                                <h3 class="theme-color">{{$smallBanner->title_3}}</h3>
+                                                <p class="w-75">{{$smallBanner->title_4}}</p>
+                                                <a href="{{$smallBanner->url}}" class="shop-button">Ko'rish <i
                                                         class="fa-solid fa-right-long"></i></a>
                                             </div>
                                         @else
                                             <div>
-                                                <h3 class="mt-0 theme-color fw-bold">Healthy Food</h3>
-                                                <h4 class="text-danger">Organic Market</h4>
-                                                <p class="organic">Start your daily shopping with some Organic food</p>
-                                                <a href="shop-left-sidebar.html" class="shop-button">Shop Now <i
+                                                <h3 class="mt-0 theme-color fw-bold">{{$smallBanner->title_1}}</h3>
+                                                <h4 class="text-danger">{{$smallBanner->title_2}}</h4>
+                                                <p class="organic">{{$smallBanner->title_3}}</p>
+                                                <a href="{{$smallBanner->url}}" class="shop-button">Ko'rish <i
                                                         class="fa-solid fa-right-long"></i></a>
                                             </div>
                                         @endif
@@ -136,7 +95,7 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                                     <h5>{{$slider->title_2}}</h5>
                                     <h6 class="text-content">{{$slider->title_3}}</h6>
                                 </div>
-                                <a href="{{$slider->url}}" class="banner-button text-white" tabindex="0">Shop Now <i
+                                <a href="{{$slider->url}}" class="banner-button text-white" tabindex="0">Hozir o'tish<i
                                         class="fa-solid fa-right-long ms-2"></i></a>
                             </div>
                         </div>
@@ -927,13 +886,13 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                             <div>
                                 <div class="blog-box">
                                     <div class="blog-box-image">
-                                        <a href="{{url("blog/".$post->id)}}" class="blog-image">
+                                        <a href="{{$post->url}}" class="blog-image">
                                             <img src="{{$post->card_photo->url??""}}" class="bg-img blur-up lazyload"
                                                  alt="">
                                         </a>
                                     </div>
 
-                                    <a href="blog-detail.html" class="blog-detail">
+                                    <a href="{{$post->url}}" class="blog-detail">
                                         <h6>{{$post->created_at->format("d.m.Y")}}</h6>
                                         <h5>{{$post->title}}</h5>
                                     </a>

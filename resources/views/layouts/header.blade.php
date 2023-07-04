@@ -18,7 +18,8 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                 <div class="col-xxl-4 col-lg-4 d-xxl-block   col-sm-8">
                     <div class="top-left-header">
                         <i class="iconly-Location icli text-white"></i>
-                        <a target="_blank" class="text-white" href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
+                        <a target="_blank" class="text-white"
+                           href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
                     </div>
                 </div>
 
@@ -341,7 +342,8 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                                     <ul class="navbar-nav">
                                         @foreach(\App\Classes\Helper::getMenu() as $menu)
                                             <li class="nav-item">
-                                                <a href="{{$menu['url']}}" class="nav-link nav-hand">{{$menu['title']}}</a>
+                                                <a href="{{$menu['url']}}"
+                                                   class="nav-link nav-hand">{{$menu['title']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -362,3 +364,45 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
     </div>
 </header>
 <!-- Header End -->
+
+
+<!-- mobile fix menu start -->
+<div class="mobile-menu d-md-none d-block mobile-cart">
+    <ul>
+        <li class="active">
+            <a href="index.html">
+                <i class="iconly-Home icli"></i>
+                <span>Bosh sahifa</span>
+            </a>
+        </li>
+
+        <li class="mobile-category">
+            <a href="javascript:void(0)">
+                <i class="iconly-Category icli js-link"></i>
+                <span>Kategoriyalar</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{url("search")}}" class="search-box">
+                <i class="iconly-Search icli"></i>
+                <span>Qidiruv</span>
+            </a>
+        </li>
+
+{{--        <li>--}}
+{{--            <a href="wishlist.html" class="notifi-wishlist">--}}
+{{--                <i class="iconly-Heart icli"></i>--}}
+{{--                <span>My Wish</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+
+{{--        <li>--}}
+{{--            <a href="cart.html">--}}
+{{--                <i class="iconly-Bag-2 icli fly-cate"></i>--}}
+{{--                <span>Cart</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+    </ul>
+</div>
+<!-- mobile fix menu end -->

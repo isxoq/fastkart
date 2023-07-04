@@ -10,13 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
-
 
 class Product extends Model implements HasMedia
 {
-    use SoftDeletes, InteractsWithMedia, HasFactory,HasSlug;
+    use SoftDeletes, InteractsWithMedia, HasFactory;
 
     public $table = 'products';
 
@@ -34,6 +31,7 @@ class Product extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'code',
         'slug',
         'category_id',
         'name',
@@ -53,7 +51,6 @@ class Product extends Model implements HasMedia
         'updated_at',
         'deleted_at',
     ];
-
 
     protected function serializeDate(DateTimeInterface $date)
     {
@@ -75,9 +72,9 @@ class Product extends Model implements HasMedia
     {
         $file = $this->getMedia('card_photo')->last();
         if ($file) {
-            $file->url       = $file->getUrl();
+            $file->url = $file->getUrl();
             $file->thumbnail = $file->getUrl('thumb');
-            $file->preview   = $file->getUrl('preview');
+            $file->preview = $file->getUrl('preview');
         }
 
         return $file;
@@ -87,9 +84,9 @@ class Product extends Model implements HasMedia
     {
         $files = $this->getMedia('photos');
         $files->each(function ($item) {
-            $item->url       = $item->getUrl();
+            $item->url = $item->getUrl();
             $item->thumbnail = $item->getUrl('thumb');
-            $item->preview   = $item->getUrl('preview');
+            $item->preview = $item->getUrl('preview');
         });
 
         return $files;
@@ -115,10 +112,14 @@ class Product extends Model implements HasMedia
         $this->attributes['end_sale'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 
-    public function getSlugOptions(): SlugOptions
+    public function getDetailUrlAttribute()
     {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name') // The column to generate the slug from
-            ->saveSlugsTo('slug'); // The column where the slug will be stored
+        return url("product/" . $this->slug);
+    }
+
+
+    public function getProductPriceAttribute()
+    {
+        return $this->sale_price ?? $this->price;
     }
 }

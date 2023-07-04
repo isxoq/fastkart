@@ -17,6 +17,10 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         return [
+            'code' => [
+                'string',
+                'nullable',
+            ],
             'slug' => [
                 'string',
                 'nullable',

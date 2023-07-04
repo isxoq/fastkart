@@ -26,6 +26,9 @@
                             {{ trans('cruds.product.fields.id') }}
                         </th>
                         <th>
+                            {{ trans('cruds.product.fields.code') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.product.fields.slug') }}
                         </th>
                         <th>
@@ -89,6 +92,9 @@
                             </td>
                             <td>
                                 {{ $product->id ?? '' }}
+                            </td>
+                            <td>
+                                {{ $product->code ?? '' }}
                             </td>
                             <td>
                                 {{ $product->slug ?? '' }}

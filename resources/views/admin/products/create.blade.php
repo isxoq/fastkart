@@ -10,6 +10,14 @@
         <form method="POST" action="{{ route("admin.products.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
+                <label for="code">{{ trans('cruds.product.fields.code') }}</label>
+                <input class="form-control {{ $errors->has('code') ? 'is-invalid' : '' }}" type="text" name="code" id="code" value="{{ old('code', '') }}">
+                @if($errors->has('code'))
+                    <span class="text-danger">{{ $errors->first('code') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.product.fields.code_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="slug">{{ trans('cruds.product.fields.slug') }}</label>
                 <input class="form-control {{ $errors->has('slug') ? 'is-invalid' : '' }}" type="text" name="slug" id="slug" value="{{ old('slug', '') }}">
                 @if($errors->has('slug'))

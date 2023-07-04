@@ -20,9 +20,13 @@ class BlogController extends Controller
         return view('page.blog.index');
     }
 
-    public function detail(Request $request)
+    public function detail(Request $request,$slug)
     {
 
-        return view('page.blog.detail');
+        $blog =Blog::findBySlug($slug);
+        if (!$blog) {
+            abort(404);
+        }
+        return view("page.blog.detail", compact("blog"));
     }
 }

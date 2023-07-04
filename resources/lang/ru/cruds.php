@@ -137,6 +137,8 @@ return [
             'is_trend_helper'          => ' ',
             'slug'                     => 'Slug',
             'slug_helper'              => ' ',
+            'code'                     => 'Mahsulot kodi',
+            'code_helper'              => ' ',
         ],
     ],
     'blog' => [
@@ -242,8 +244,8 @@ return [
         ],
     ],
     'banneSlider' => [
-        'title'          => 'Banne Slayder',
-        'title_singular' => 'Banne Slayder',
+        'title'          => 'Banner Slayder',
+        'title_singular' => 'Banner Slayder',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
@@ -290,8 +292,8 @@ return [
         ],
     ],
     'specialOffer' => [
-        'title'          => 'Mahsus taklif',
-        'title_singular' => 'Mahsus taklif',
+        'title'          => 'Mahsulotlar taklifi',
+        'title_singular' => 'Mahsulotlar taklifi',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
