@@ -18,7 +18,7 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                 <div class="col-xxl-4 col-lg-4 d-xxl-block   col-sm-8">
                     <div class="top-left-header">
                         <i class="iconly-Location icli text-white"></i>
-                        <span class="text-white">Toshkent, Shayhontoxur t, Mannon Uyg’ur, 307</span>
+                        <a target="_blank" class="text-white" href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
                     </div>
                 </div>
 
