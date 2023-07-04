@@ -934,8 +934,8 @@ $categoriesWithoutChildren = \App\Models\Category::with('childrenRecursive')
                                     </div>
 
                                     <a href="blog-detail.html" class="blog-detail">
-                                        <h6>{{$product->created_at->format("d.m.Y")}}</h6>
-                                        <h5>Fresh Vegetable Online</h5>
+                                        <h6>{{$post->created_at->format("d.m.Y")}}</h6>
+                                        <h5>{{$post->title}}</h5>
                                     </a>
                                 </div>
                             </div>
