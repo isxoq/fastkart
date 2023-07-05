@@ -62,6 +62,7 @@
                                     <h6 class="offer-top">{{$product->salePercentage}}% Off</h6>
                                 @endif
                                 <h2 class="name">{{$product->name}}</h2>
+                                <h5 class="name">Mahsulot kodi: {{$product->code}}</h5>
                                 <div class="price-rating">
                                     <h3 class="theme-color price">${{$product->productPrice}}
                                         @if($product->salePercentage)
