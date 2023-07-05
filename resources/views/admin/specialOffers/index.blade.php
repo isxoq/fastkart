@@ -41,6 +41,9 @@
                             {{ trans('cruds.specialOffer.fields.title_2') }}
                         </th>
                         <th>
+                            {{ trans('cruds.specialOffer.fields.url') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -72,6 +75,9 @@
                             </td>
                             <td>
                                 {{ $specialOffer->title_2 ?? '' }}
+                            </td>
+                            <td>
+                                {{ $specialOffer->url ?? '' }}
                             </td>
                             <td>
                                 @can('special_offer_show')

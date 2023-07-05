@@ -67,6 +67,14 @@
                             {{ $specialOffer->title_2 }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.specialOffer.fields.url') }}
+                        </th>
+                        <td>
+                            {{ $specialOffer->url }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

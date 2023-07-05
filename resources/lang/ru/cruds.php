@@ -292,8 +292,8 @@ return [
         ],
     ],
     'specialOffer' => [
-        'title'          => 'Mahsulotlar taklifi',
-        'title_singular' => 'Mahsulotlar taklifi',
+        'title'          => 'Mahsulotlar takliflar',
+        'title_singular' => 'Mahsulotlar takliflar',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
@@ -313,6 +313,8 @@ return [
             'title_1_helper'    => ' ',
             'title_2'           => 'Matn 2',
             'title_2_helper'    => ' ',
+            'url'               => 'Url',
+            'url_helper'        => ' ',
         ],
     ],
     'contact' => [

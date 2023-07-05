@@ -37,4 +37,10 @@ class Offer extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+
+
+    public function offers()
+    {
+        return $this->hasMany(SpecialOffer::class, 'offer_id', 'id');
+    }
 }

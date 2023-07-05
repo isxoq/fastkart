@@ -56,6 +56,14 @@
                 <span class="help-block">{{ trans('cruds.specialOffer.fields.title_2_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="url">{{ trans('cruds.specialOffer.fields.url') }}</label>
+                <input class="form-control {{ $errors->has('url') ? 'is-invalid' : '' }}" type="text" name="url" id="url" value="{{ old('url', $specialOffer->url) }}">
+                @if($errors->has('url'))
+                    <span class="text-danger">{{ $errors->first('url') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.specialOffer.fields.url_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

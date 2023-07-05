@@ -155,18 +155,6 @@
                         </a>
                     </li>
                 @endcan
-                @can('special_offer_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.special-offers.index") }}" class="nav-link {{ request()->is("admin/special-offers") || request()->is("admin/special-offers/*") ? "active" : "" }}">
-                            <i class="fa-fw nav-icon fas fa-cogs">
-
-                            </i>
-                            <p>
-                                {{ trans('cruds.specialOffer.title') }}
-                            </p>
-                        </a>
-                    </li>
-                @endcan
                 @can('offer_access')
                     <li class="nav-item">
                         <a href="{{ route("admin.offers.index") }}" class="nav-link {{ request()->is("admin/offers") || request()->is("admin/offers/*") ? "active" : "" }}">
@@ -175,6 +163,18 @@
                             </i>
                             <p>
                                 {{ trans('cruds.offer.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('special_offer_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.special-offers.index") }}" class="nav-link {{ request()->is("admin/special-offers") || request()->is("admin/special-offers/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-cogs">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.specialOffer.title') }}
                             </p>
                         </a>
                     </li>
@@ -222,7 +222,7 @@
                             <i class="fas fa-fw fa-sign-out-alt nav-icon">
 
                             </i>
-                            <p>{{ trans('global.logout') }}</p>
+                        <p>{{ trans('global.logout') }}</p>
                         </p>
                     </a>
                 </li>

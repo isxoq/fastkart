@@ -31,6 +31,10 @@ class StoreSpecialOfferRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'url' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

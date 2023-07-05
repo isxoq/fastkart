@@ -31,6 +31,7 @@ class SpecialOffer extends Model implements HasMedia
         'offer_id',
         'title_1',
         'title_2',
+        'url',
         'created_at',
         'updated_at',
         'deleted_at',

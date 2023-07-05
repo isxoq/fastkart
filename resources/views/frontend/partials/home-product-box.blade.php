@@ -36,7 +36,7 @@
 
         <h5 class="sold text-content">
             <span class="theme-color price">UZS {{$product->sale_price??$product->price}}</span>
-            <del>UZS {{$product->price}}</del>
+            <del>$ {{$product->price}}</del>
         </h5>
 
         {{--        <div class="product-rating mt-sm-2 mt-1">--}}
