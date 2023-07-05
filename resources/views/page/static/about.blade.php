@@ -131,13 +131,13 @@ $members = \App\Models\Contact::all();
                                             </li>
 
                                             <li>
-                                                <a href="{{$member->telegram}}" class="pint-bg">
+                                                <a href="{{$member->telegram}}" class="telegram-bg">
                                                     <i class="fa-brands fa-telegram"></i>
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="{{$member->whatsapp}}" class="twitter-bg">
+                                                <a href="{{$member->whatsapp}}" class="whatsapp-bg">
                                                     <i class="fa-brands fa-whatsapp"></i>
                                                 </a>
                                             </li>

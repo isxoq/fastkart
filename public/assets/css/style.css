@@ -18446,6 +18446,22 @@ header .offcanvas-backdrop {
   background-color: #c8232c;
   color: #ffffff;
 }
+.team-section .team-box .team-name .team-media li a.telegram-bg {
+  color: #0088CC;
+  transition: all 0.3s ease-in-out;
+}
+.team-section .team-box .team-name .team-media li a.telegram-bg:hover {
+  background-color: #0088CC;
+  color: #ffffff;
+}
+.team-section .team-box .team-name .team-media li a.whatsapp-bg {
+  color: #25D366;
+  transition: all 0.3s ease-in-out;
+}
+.team-section .team-box .team-name .team-media li a.whatsapp-bg:hover {
+  background-color: #25D366;
+  color: #ffffff;
+}
 .team-section .team-box .team-name .team-media li a.insta-bg {
   color: #F56040;
   transition: all 0.3s ease-in-out;

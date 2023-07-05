@@ -10,7 +10,18 @@ $trendingProducts = trendingProducts();
 
 
 @section("content")
-
+    @include('layouts.breadcrumb',[
+    "name"=>$blog->title,
+    "items"=>[
+        [
+            "name"=>"Yangiliklar",
+            "url"=>"/blog"
+],
+        [
+            "name"=>$blog->title
+]
+]
+      ])
     <!-- Blog Details Section Start -->
     <section class="blog-section section-b-space">
         <div class="container-fluid-lg">

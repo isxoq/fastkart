@@ -4321,6 +4321,26 @@
                             }
                         }
 
+                        &.telegram-bg {
+                            color: #0088CC;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background-color: #0088CC;
+                                color: $white;
+                            }
+                        }
+
+                        &.whatsapp-bg {
+                            color: #25D366;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background-color: #25D366;
+                                color: $white;
+                            }
+                        }
+
                         &.insta-bg {
                             color: #F56040;
                             transition: all 0.3s ease-in-out;

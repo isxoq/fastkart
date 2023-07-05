@@ -17,13 +17,21 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        return view('page.blog.index');
+
+        $blogs = Blog::query()
+            ->orderBy("start")
+            ->paginate(12);
+
+        $recentPosts = Blog::query()
+            ->latest()->limit(5)->get();
+
+        return view('page.blog.index', compact("blogs", "recentPosts"));
     }
 
-    public function detail(Request $request,$slug)
+    public function detail(Request $request, $slug)
     {
 
-        $blog =Blog::findBySlug($slug);
+        $blog = Blog::findBySlug($slug);
         if (!$blog) {
             abort(404);
         }
