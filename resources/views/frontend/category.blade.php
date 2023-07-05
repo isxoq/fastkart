@@ -304,7 +304,7 @@
                                          aria-labelledby="headingThree">
                                         <div class="accordion-body">
                                             <div class="range-slider">
-                                                <input type="text" class="js-range-slider" value="">
+                                                <input hidden type="text" id="rangeSlider" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -880,4 +880,30 @@
 
     <!-- sidebar open js -->
     <script src="{{asset("assets/js/filter-sidebar.js")}}"></script>
+
+    <script>
+        $("#rangeSlider").ionRangeSlider(
+            {
+                type: "double",
+                min: 0,
+                max: {{\App\Models\Product::query()->sum("price")}},
+                from: {{request()->get("from")??0}},
+                to: {{request()->get("to")??\App\Models\Product::query()->sum("price")}},
+                grid: true,
+                onFinish: function (data) {
+                    // Called then action is done and mouse is released
+
+                    let currentUrl = window.location.href.split('?')[0];
+
+                    let newParams = 'from=' + data.from + '&to=' + data.to;
+
+                    let newUrl = currentUrl + '?' + newParams;
+
+                    window.location.href = newUrl;
+
+                },
+
+            }
+        );
+    </script>
 @endsection

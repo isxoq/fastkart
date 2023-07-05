@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
@@ -17,7 +17,11 @@ class CatalogController extends Controller
             abort(404);
         }
 
-        $products = $category->products()->paginate(12);
+        $minPrice = $request->input('from') ?? 0;
+        $maxPrice = $request->input('to') ?? Product::query()->sum("price");
+
+        $products = $category->products()->whereBetween("products.price", [$minPrice, $maxPrice])->paginate(12);
+
         return view("frontend.category", compact("category", "products"));
     }
 
