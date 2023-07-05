@@ -10,10 +10,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Product extends Model implements HasMedia
 {
-    use SoftDeletes, InteractsWithMedia, HasFactory;
+    use SoftDeletes, InteractsWithMedia, HasFactory, HasSlug;
 
     public $table = 'products';
 
@@ -122,4 +124,54 @@ class Product extends Model implements HasMedia
     {
         return $this->sale_price ?? $this->price;
     }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name') // The column to generate the slug from
+            ->saveSlugsTo('slug'); // The column where the slug will be stored
+    }
+
+    public function getSalePercentageAttribute()
+    {
+        if ($this->sale_price) {
+            return round((($this->price / $this->sale_price) - 1) * 100);
+        } else {
+            return false;
+        }
+    }
+
+    public function endDifferentTime()
+    {
+        $currentDateTime = Carbon::now();
+        $targetDateTime = Carbon::createFromTimeString($this->end_sale);
+
+        // Calculate the time difference
+        $timeDifference = $currentDateTime->diff($targetDateTime);
+
+        // Extract the hours, minutes, and seconds from the time difference
+        $days = $timeDifference->d;
+        $hours = $timeDifference->h;
+        $minutes = $timeDifference->i;
+        $seconds = $timeDifference->s;
+
+        return [
+            "days" => $days,
+            "hours" => $hours,
+            "minute" => $minutes,
+            "second" => $seconds,
+            "end" => (integer)$targetDateTime->format('U') * 1000
+        ];
+    }
+
+
+    public function relatedProducts()
+    {
+        return Product::query()
+            ->where('category_id', $this->category->id)
+            ->inRandomOrder()
+            ->limit(10)->get();
+    }
+
+
 }

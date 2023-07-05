@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Request;
 
@@ -15,13 +16,20 @@ class CatalogController extends Controller
         if (!$category) {
             abort(404);
         }
-        return view("frontend.category", compact("category"));
+
+        $products = $category->products()->paginate(12);
+        return view("frontend.category", compact("category", "products"));
     }
 
 
-    public function detail(\Illuminate\Support\Facades\Request $request)
+    public function detail(\Illuminate\Support\Facades\Request $request, $slug)
     {
-        return view("frontend.detail");
+        $product = Product::findBySlug($slug);
+        if (!$product) {
+            abort(404);
+        }
+
+        return view("frontend.detail", compact('product'));
 
     }
 

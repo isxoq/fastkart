@@ -477,7 +477,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                     <ul class="deal-offer-list">
                         @foreach(dealsToday() as $deal)
                             <li class="list-1">
-                                <div class="deal-offer-contain">
+                                <div class="deal-offer-contain" style="background-color: {{$deal->color}}">
                                     <a href="{{$deal->product->detailUrl}}" class="deal-image">
                                         <img src="{{$deal->product->card_photo?->url}}" class="blur-up lazyload"
                                              alt="">

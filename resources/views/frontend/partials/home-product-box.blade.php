@@ -1,7 +1,7 @@
 <div class="product-box">
     <div class="product-image">
 
-        <a href="product-left-thumbnail.html">
+        <a href="{{$product->detailUrl}}">
             <img src="{{$product->card_photo->url}}"
                  class="img-fluid blur-up lazyload" alt="">
         </a>
@@ -30,13 +30,15 @@
         </ul>
     </div>
     <div class="product-detail">
-        <a href="product-left-thumbnail.html">
+        <a href="{{$product->detailUrl}}">
             <h6 class="name">{{$product->name}}</h6>
         </a>
 
         <h5 class="sold text-content">
             <span class="theme-color price">UZS {{$product->sale_price??$product->price}}</span>
-            <del>$ {{$product->price}}</del>
+            @if($product->salePercentage)
+                <del>$ {{$product->price}}</del>
+            @endif
         </h5>
 
         {{--        <div class="product-rating mt-sm-2 mt-1">--}}

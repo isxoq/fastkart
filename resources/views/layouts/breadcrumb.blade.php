@@ -16,7 +16,11 @@
                                 @if($loop->last)
                                     <li class="breadcrumb-item active" aria-current="page">{{$item['name']}}</li>
                                 @else
-                                    <li class="breadcrumb-item" aria-current="page">{{$item['name']}}</li>
+                                    <li class="breadcrumb-item">
+                                        <a href="{{$item['url']}}">
+                                            {{$item['name']}}
+                                        </a>
+                                    </li>
                                 @endif
                             @endforeach
                         </ol>

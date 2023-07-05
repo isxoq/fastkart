@@ -60,6 +60,11 @@ class Category extends Model implements HasMedia
         return $this->belongsTo(self::class, 'category_id');
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
