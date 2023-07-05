@@ -370,7 +370,7 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
 <div class="mobile-menu d-md-none d-block mobile-cart">
     <ul>
         <li class="active">
-            <a href="index.html">
+            <a href="/">
                 <i class="iconly-Home icli"></i>
                 <span>Bosh sahifa</span>
             </a>
