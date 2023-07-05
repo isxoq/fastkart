@@ -203,6 +203,18 @@
                         </a>
                     </li>
                 @endcan
+                @can('deal_today_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.deal-todays.index") }}" class="nav-link {{ request()->is("admin/deal-todays") || request()->is("admin/deal-todays/*") ? "active" : "" }}">
+                            <i class="fa-fw nav-icon fas fa-cogs">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.dealToday.title') }}
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
                     @can('profile_password_edit')
                         <li class="nav-item">
@@ -222,7 +234,7 @@
                             <i class="fas fa-fw fa-sign-out-alt nav-icon">
 
                             </i>
-                        <p>{{ trans('global.logout') }}</p>
+                            <p>{{ trans('global.logout') }}</p>
                         </p>
                     </a>
                 </li>

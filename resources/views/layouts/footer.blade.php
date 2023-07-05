@@ -11,53 +11,53 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
 <!-- Footer Section Start -->
 <footer class="section-t-space">
     <div class="container-fluid-lg">
-{{--        <div class="service-section">--}}
-{{--            <div class="row g-3">--}}
-{{--                <div class="col-12">--}}
-{{--                    <div class="service-contain">--}}
-{{--                        <div class="service-box">--}}
-{{--                            <div class="service-image">--}}
-{{--                                <img src="../assets/svg/product.svg" class="blur-up lazyload" alt="">--}}
-{{--                            </div>--}}
+        {{--        <div class="service-section">--}}
+        {{--            <div class="row g-3">--}}
+        {{--                <div class="col-12">--}}
+        {{--                    <div class="service-contain">--}}
+        {{--                        <div class="service-box">--}}
+        {{--                            <div class="service-image">--}}
+        {{--                                <img src="../assets/svg/product.svg" class="blur-up lazyload" alt="">--}}
+        {{--                            </div>--}}
 
-{{--                            <div class="service-detail">--}}
-{{--                                <h5>Every Fresh Products</h5>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+        {{--                            <div class="service-detail">--}}
+        {{--                                <h5>Every Fresh Products</h5>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
 
-{{--                        <div class="service-box">--}}
-{{--                            <div class="service-image">--}}
-{{--                                <img src="../assets/svg/delivery.svg" class="blur-up lazyload" alt="">--}}
-{{--                            </div>--}}
+        {{--                        <div class="service-box">--}}
+        {{--                            <div class="service-image">--}}
+        {{--                                <img src="../assets/svg/delivery.svg" class="blur-up lazyload" alt="">--}}
+        {{--                            </div>--}}
 
-{{--                            <div class="service-detail">--}}
-{{--                                <h5>Free Delivery For Order Over $50</h5>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+        {{--                            <div class="service-detail">--}}
+        {{--                                <h5>Free Delivery For Order Over $50</h5>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
 
-{{--                        <div class="service-box">--}}
-{{--                            <div class="service-image">--}}
-{{--                                <img src="../assets/svg/discount.svg" class="blur-up lazyload" alt="">--}}
-{{--                            </div>--}}
+        {{--                        <div class="service-box">--}}
+        {{--                            <div class="service-image">--}}
+        {{--                                <img src="../assets/svg/discount.svg" class="blur-up lazyload" alt="">--}}
+        {{--                            </div>--}}
 
-{{--                            <div class="service-detail">--}}
-{{--                                <h5>Daily Mega Discounts</h5>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+        {{--                            <div class="service-detail">--}}
+        {{--                                <h5>Daily Mega Discounts</h5>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
 
-{{--                        <div class="service-box">--}}
-{{--                            <div class="service-image">--}}
-{{--                                <img src="../assets/svg/market.svg" class="blur-up lazyload" alt="">--}}
-{{--                            </div>--}}
+        {{--                        <div class="service-box">--}}
+        {{--                            <div class="service-image">--}}
+        {{--                                <img src="../assets/svg/market.svg" class="blur-up lazyload" alt="">--}}
+        {{--                            </div>--}}
 
-{{--                            <div class="service-detail">--}}
-{{--                                <h5>Best Price On The Market</h5>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        {{--                            <div class="service-detail">--}}
+        {{--                                <h5>Best Price On The Market</h5>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
 
 
         <div class="main-footer section-b-space section-t-space">
@@ -79,14 +79,15 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                             <ul class="address">
                                 <li>
                                     <i data-feather="home"></i>
-                                    <a target="_blank" href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
+                                    <a target="_blank"
+                                       href="{{\App\Classes\Helper::info("yandex1")}}">{{\App\Classes\Helper::info("address1")}}</a>
 
-{{--                                    <a href="javascript:void(0)">Abu saxiy savdo markazi Q-11 L-23 do'kon</a>--}}
+                                    {{--                                    <a href="javascript:void(0)">Abu saxiy savdo markazi Q-11 L-23 do'kon</a>--}}
                                 </li>
-{{--                                <li>--}}
-{{--                                    <i data-feather="mail"></i>--}}
-{{--                                    <a href="javascript:void(0)">harir.brend@gmail.com</a>--}}
-{{--                                </li>--}}
+                                {{--                                <li>--}}
+                                {{--                                    <i data-feather="mail"></i>--}}
+                                {{--                                    <a href="javascript:void(0)">harir.brend@gmail.com</a>--}}
+                                {{--                                </li>--}}
                             </ul>
                         </div>
                     </div>
@@ -101,9 +102,9 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                         <ul>
                             @foreach($categories as $category)
 
-                            <li>
-                                <a href="{{$category->url()}}" class="text-content">{{$category->name}}</a>
-                            </li>
+                                <li>
+                                    <a href="{{$category->url()}}" class="text-content">{{$category->name}}</a>
+                                </li>
                             @endforeach
 
                         </ul>
@@ -127,32 +128,32 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                 </div>
 
                 <div class="col-xl-2 col-sm-3">
-{{--                    <div class="footer-title">--}}
-{{--                        <h4>Help Center</h4>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="footer-title">--}}
+                    {{--                        <h4>Help Center</h4>--}}
+                    {{--                    </div>--}}
 
-{{--                    <div class="footer-contain">--}}
-{{--                        <ul>--}}
-{{--                            <li>--}}
-{{--                                <a href="order-success.html" class="text-content">Your Order</a>--}}
-{{--                            </li>--}}
-{{--                            <li>--}}
-{{--                                <a href="user-dashboard.html" class="text-content">Your Account</a>--}}
-{{--                            </li>--}}
-{{--                            <li>--}}
-{{--                                <a href="order-tracking.html" class="text-content">Track Order</a>--}}
-{{--                            </li>--}}
-{{--                            <li>--}}
-{{--                                <a href="wishlist.html" class="text-content">Your Wishlist</a>--}}
-{{--                            </li>--}}
-{{--                            <li>--}}
-{{--                                <a href="search.html" class="text-content">Search</a>--}}
-{{--                            </li>--}}
-{{--                            <li>--}}
-{{--                                <a href="faq.html" class="text-content">FAQ</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="footer-contain">--}}
+                    {{--                        <ul>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="order-success.html" class="text-content">Your Order</a>--}}
+                    {{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="user-dashboard.html" class="text-content">Your Account</a>--}}
+                    {{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="order-tracking.html" class="text-content">Track Order</a>--}}
+                    {{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="wishlist.html" class="text-content">Your Wishlist</a>--}}
+                    {{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="search.html" class="text-content">Search</a>--}}
+                    {{--                            </li>--}}
+                    {{--                            <li>--}}
+                    {{--                                <a href="faq.html" class="text-content">FAQ</a>--}}
+                    {{--                            </li>--}}
+                    {{--                        </ul>--}}
+                    {{--                    </div>--}}
                 </div>
 
                 <div class="col-xl-3 col-lg-4 col-sm-6">
@@ -167,8 +168,9 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Doim 24/7 :</h6>
-                                        <a href="tel:{{\App\Classes\Helper::info("phone1")}}"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>
-{{--                                        <a href="tel:+998903889993"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>--}}
+                                        <a href="tel:{{\App\Classes\Helper::info("phone1")}}">
+                                            <h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>
+                                        {{--                                        <a href="tel:+998903889993"><h5>{{\App\Classes\Helper::info("phone1")}}</h5></a>--}}
                                     </div>
                                 </div>
                             </li>
@@ -180,29 +182,29 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                                         <h6 class="text-content">Email Address :</h6>
                                         <h5>
                                             <a href="mailto:{{\App\Classes\Helper::info("email")}}">{{\App\Classes\Helper::info("email")}}</a>
-{{--                                            {{\App\Classes\Helper::info("email")}}--}}
+                                            {{--                                            {{\App\Classes\Helper::info("email")}}--}}
                                         </h5>
                                     </div>
                                 </div>
                             </li>
 
-{{--                            <li class="social-app mb-0">--}}
-{{--                                <h5 class="mb-2 text-content">Download App :</h5>--}}
-{{--                                <ul>--}}
-{{--                                    <li class="mb-0">--}}
-{{--                                        <a href="https://play.google.com/store/apps" target="_blank">--}}
-{{--                                            <img src="../assets/images/playstore.svg" class="blur-up lazyload"--}}
-{{--                                                 alt="">--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="mb-0">--}}
-{{--                                        <a href="https://www.apple.com/in/app-store/" target="_blank">--}}
-{{--                                            <img src="../assets/images/appstore.svg" class="blur-up lazyload"--}}
-{{--                                                 alt="">--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
+                            {{--                            <li class="social-app mb-0">--}}
+                            {{--                                <h5 class="mb-2 text-content">Download App :</h5>--}}
+                            {{--                                <ul>--}}
+                            {{--                                    <li class="mb-0">--}}
+                            {{--                                        <a href="https://play.google.com/store/apps" target="_blank">--}}
+                            {{--                                            <img src="../assets/images/playstore.svg" class="blur-up lazyload"--}}
+                            {{--                                                 alt="">--}}
+                            {{--                                        </a>--}}
+                            {{--                                    </li>--}}
+                            {{--                                    <li class="mb-0">--}}
+                            {{--                                        <a href="https://www.apple.com/in/app-store/" target="_blank">--}}
+                            {{--                                            <img src="../assets/images/appstore.svg" class="blur-up lazyload"--}}
+                            {{--                                                 alt="">--}}
+                            {{--                                        </a>--}}
+                            {{--                                    </li>--}}
+                            {{--                                </ul>--}}
+                            {{--                            </li>--}}
                         </ul>
                     </div>
                 </div>
@@ -214,9 +216,9 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                 <h6 class="text-content">©{{date("Y")}} Harir All rights reserved</h6>
             </div>
 
-{{--            <div class="payment">--}}
-{{--                <img src="../assets/images/payment/1.png" class="blur-up lazyload" alt="">--}}
-{{--            </div>--}}
+            {{--            <div class="payment">--}}
+            {{--                <img src="../assets/images/payment/1.png" class="blur-up lazyload" alt="">--}}
+            {{--            </div>--}}
 
             <div class="social-link">
                 <h6 class="text-content">Bizni kuzating :</h6>
@@ -339,10 +341,12 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
                             <div class="modal-button">
                                 <button onclick="location.href = 'cart.html';"
                                         class="btn btn-md add-cart-button icon">Add
-                                    To Cart</button>
+                                    To Cart
+                                </button>
                                 <button onclick="location.href = 'product-left.html';"
                                         class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
-                                    View More Details</button>
+                                    View More Details
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -462,7 +466,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
             <div class="modal-header">
                 <div>
                     <h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
-                    <p class="mt-1 text-content">Recommended deals for you.</p>
+                    <p class="mt-1 text-content">Siz uchun tavsiya qilamiz.</p>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa-solid fa-xmark"></i>
@@ -471,61 +475,26 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
             <div class="modal-body">
                 <div class="deal-offer-box">
                     <ul class="deal-offer-list">
-                        <li class="list-1">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
+                        @foreach(dealsToday() as $deal)
+                            <li class="list-1">
+                                <div class="deal-offer-contain">
+                                    <a href="{{$deal->product->detailUrl}}" class="deal-image">
+                                        <img src="{{$deal->product->card_photo?->url}}" class="blur-up lazyload"
+                                             alt="">
+                                    </a>
 
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="list-2">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="list-3">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="list-1">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
+                                    <a href="{{$deal->product->detailUrl}}" class="deal-contain">
+                                        <h5>{{$deal->product->name}}</h5>
+                                        <h6>$ {{$deal->product->sale_price??$deal->product->price}}
+                                            @if($deal->product->sale_price)
+                                                <del>{{$deal->product->price}}</del>
+                                                <span>{{$deal->product->price - $deal->product->sale_price}}</span>
+                                            @endif
+                                        </h6>
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

@@ -270,8 +270,8 @@ return [
         ],
     ],
     'offer' => [
-        'title'          => 'Bosh sahifadagi offerlar',
-        'title_singular' => 'Bosh sahifadagi offerlar',
+        'title'          => 'Bosh sahifa mahsulot guruhlari',
+        'title_singular' => 'Bosh sahifa mahsulot guruhlari',
         'fields'         => [
             'id'                       => 'ID',
             'id_helper'                => ' ',
@@ -292,8 +292,8 @@ return [
         ],
     ],
     'specialOffer' => [
-        'title'          => 'Mahsulotlar takliflar',
-        'title_singular' => 'Mahsulotlar takliflar',
+        'title'          => 'Bosh sahifadagi offerlar',
+        'title_singular' => 'Bosh sahifadagi offerlar',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
@@ -367,6 +367,26 @@ return [
             'deleted_at_helper' => ' ',
             'slug'              => 'Slug',
             'slug_helper'       => ' ',
+        ],
+    ],
+    'dealToday' => [
+        'title'          => 'Deal Today',
+        'title_singular' => 'Deal Today',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => ' ',
+            'product'           => 'Product',
+            'product_helper'    => 'Mahsulotni tanlang',
+            'color'             => 'Blok fon rangi',
+            'color_helper'      => ' ',
+            'sort_order'        => 'Saralash',
+            'sort_order_helper' => ' ',
+            'created_at'        => 'Created at',
+            'created_at_helper' => ' ',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => ' ',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => ' ',
         ],
     ],
 

@@ -296,6 +296,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 72,
+                'title' => 'deal_today_create',
+            ],
+            [
+                'id'    => 73,
+                'title' => 'deal_today_edit',
+            ],
+            [
+                'id'    => 74,
+                'title' => 'deal_today_show',
+            ],
+            [
+                'id'    => 75,
+                'title' => 'deal_today_delete',
+            ],
+            [
+                'id'    => 76,
+                'title' => 'deal_today_access',
+            ],
+            [
+                'id'    => 77,
                 'title' => 'profile_password_edit',
             ],
         ];

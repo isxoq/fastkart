@@ -1,7 +1,7 @@
 <?php
 
 $recentPosts = \App\Models\Blog::query()->limit(4)->latest("start")->get();
-$trendingProducts = \App\Models\Product::query()->limit(6)->latest()->get();
+$trendingProducts = trendingProducts();
 
 ?>
 
