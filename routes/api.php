@@ -8,3 +8,4 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
 
 Route::post("send-zayavka", [\App\Http\Controllers\Api\TelegramController::class, "sendZayavka"]);
+Route::get("product/detail-ajax/{product}", [\App\Http\Controllers\Frontend\CatalogController::class, "detailAjax"]);

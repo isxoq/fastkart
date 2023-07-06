@@ -25,7 +25,6 @@ class CatalogController extends Controller
         return view("frontend.category", compact("category", "products"));
     }
 
-
     public function detail(\Illuminate\Support\Facades\Request $request, $slug)
     {
         $product = Product::findBySlug($slug);
@@ -35,6 +34,11 @@ class CatalogController extends Controller
 
         return view("frontend.detail", compact('product'));
 
+    }
+
+    public function detailAjax(Request $request, Product $product)
+    {
+        return view("frontend.partials.modal", compact('product'));
     }
 
     public function search(Request $request)

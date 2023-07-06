@@ -8,8 +8,7 @@
         <ul class="product-option justify-content-center">
             <li data-bs-toggle="tooltip" data-bs-placement="top"
                 title="Ko'rish">
-                <a href="{{url("product/".$product->id)}}" data-bs-toggle="modal"
-                   data-bs-target="#view">
+                <a id="detailAjaxBtn" data-id="{{$product->id}}" href="#">
                     <i data-feather="eye"></i>
                 </a>
             </li>
