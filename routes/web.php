@@ -11,6 +11,7 @@ Route::get('/blog', [\App\Http\Controllers\Frontend\BlogController::class, "inde
 Route::get('/blog/{blog}', [\App\Http\Controllers\Frontend\BlogController::class, "detail"])->name('blog_detail');
 Route::get('/about-us', [\App\Http\Controllers\Frontend\StaticPageController::class, "aboutUs"])->name('about_us');
 Route::get('/contact-us', [\App\Http\Controllers\Frontend\StaticPageController::class, "contactUs"])->name('contact_us');
+Route::get('/search', [\App\Http\Controllers\Frontend\CatalogController::class, "search"])->name('contact_us');
 
 Auth::routes(['register' => false]);
 

@@ -237,7 +237,6 @@
                                                             <a href="shop-left-sidebar.html">
                                                                 <h6 class="name">Meatigo Premium Goat Curry</h6>
                                                             </a>
-                                                            <span>450 G</span>
                                                             <h6 class="price theme-color">$ 70.00</h6>
                                                         </div>
                                                     </div>
@@ -256,7 +255,6 @@
                                                             <a href="shop-left-sidebar.html">
                                                                 <h6 class="name">Dates Medjoul Premium Imported</h6>
                                                             </a>
-                                                            <span>450 G</span>
                                                             <h6 class="price theme-color">$ 40.00</h6>
                                                         </div>
                                                     </div>

@@ -35,7 +35,7 @@
         </a>
 
         <h5 class="sold text-content">
-            <span class="theme-color price">UZS {{$product->sale_price??$product->price}}</span>
+            <span class="theme-color price">$ {{$product->sale_price??$product->price}}</span>
             @if($product->salePercentage)
                 <del>$ {{$product->price}}</del>
             @endif

@@ -127,15 +127,17 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                             {{--                                </button>--}}
                             {{--                            </div>--}}
 
-                            <div class="search-box">
-                                <div class="input-group">
-                                    <input type="search" class="form-control" placeholder="Qidiruv..."
-                                           aria-label="" aria-describedby="button-addon2">
-                                    <button class="btn" type="button" id="button-addon2">
-                                        <i data-feather="search"></i>
-                                    </button>
+                            <form action="/search">
+                                <div class="search-box">
+                                    <div class="input-group">
+                                        <input type="search" name="q" class="form-control" placeholder="Qidiruv..."
+                                               aria-label="" aria-describedby="button-addon2">
+                                        <button class="btn" type="submit" id="button-addon2">
+                                            <i data-feather="search"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                         <div class="rightside-box">
@@ -161,7 +163,7 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                                     </div>
                                 </li>
                                 <li class="right-side">
-                                    <a href="tel:+998903889993" class="delivery-login-box">
+                                    <a href="tel:{{\App\Classes\Helper::info("phone3")}}" class="delivery-login-box">
                                         <div class="delivery-icon">
                                             <i data-feather="phone-call"></i>
                                         </div>
@@ -355,7 +357,7 @@ $topTitles = \Illuminate\Support\Facades\Cache::remember('topTitles', \App\Class
                     <div class="header-nav-right">
                         <button class="btn deal-button" data-bs-toggle="modal" data-bs-target="#deal-box">
                             <i data-feather="zap"></i>
-                            <span>Deal Today</span>
+                            <span>Kun mahsulotlari</span>
                         </button>
                     </div>
                 </div>

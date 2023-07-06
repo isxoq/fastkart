@@ -219,9 +219,8 @@ $trendingProducts = trendingProducts();
                                                                 <a href="{{$product->detailUrl}}">
                                                                     <h6 class="name">{{$product->name}}</h6>
                                                                 </a>
-                                                                <span>450 G</span>
                                                                 <h6 class="price theme-color">
-                                                                    UZS {{$product->productPrice}}</h6>
+                                                                    $ {{$product->productPrice}}</h6>
                                                             </div>
                                                         </div>
                                                     </div>

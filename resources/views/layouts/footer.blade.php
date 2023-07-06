@@ -465,7 +465,7 @@ $categories = \Illuminate\Support\Facades\Cache::remember('categories', \App\Cla
         <div class="modal-content">
             <div class="modal-header">
                 <div>
-                    <h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
+                    <h5 class="modal-title w-100" id="deal_today">Kun mahsulotlari</h5>
                     <p class="mt-1 text-content">Siz uchun tavsiya qilamiz.</p>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">

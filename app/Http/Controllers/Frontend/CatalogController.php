@@ -37,5 +37,21 @@ class CatalogController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+        $searchKey = $request->get("q");
+
+        $minPrice = $request->input('from') ?? 0;
+        $maxPrice = $request->input('to') ?? Product::query()->sum("price");
+
+        $products = Product::query()
+            ->where('code', 'like', '%' . $searchKey . '%')
+            ->orWhere('name', 'like', '%' . $searchKey . '%')
+            ->orWhere('short_description', 'like', '%' . $searchKey . '%')
+            ->orWhere('description', 'like', '%' . $searchKey . '%')
+            ->whereBetween("price", [$minPrice, $maxPrice])
+            ->paginate(12);
+        return view("page.search.results", compact("products"));
+    }
 
 }
