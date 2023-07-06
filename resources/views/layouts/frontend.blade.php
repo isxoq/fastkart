@@ -49,7 +49,7 @@
     <link id="color-link" rel="stylesheet" type="text/css" href="{{asset("assets/css/style.css")}}">
     @yield('styles')
 
-    @if(config("env")=="production")
+    @if(config("app.env")=="production")
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">
             (function (m, e, t, r, i, k, a) {
