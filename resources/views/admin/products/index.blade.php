@@ -103,8 +103,8 @@
                                 {{ $product->category->name ?? '' }}
                             </td>
                             <td>
-                                <span style="display:none">{{ $product->category->status ?? '' }}</span>
-                                <input type="checkbox" disabled="disabled" {{ $product->category->status ? 'checked' : '' }}>
+                                <span style="display:none">{{ $product->category?->status ?? '' }}</span>
+                                <input type="checkbox" disabled="disabled" {{ $product->category?->status ? 'checked' : '' }}>
                             </td>
                             <td>
                                 {{ $product->name ?? '' }}
@@ -238,7 +238,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>
